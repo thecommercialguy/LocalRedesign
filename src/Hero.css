@@ -1,0 +1,221 @@
+section.hero {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    color: white;
+}
+
+.hero > img {
+    display: flex;
+    position: relative;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-headers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-30%);
+    border: 8px double rgba(255, 255, 255, 0.5);;
+    padding: 10px 15px;
+    /* background-color: white; */
+    /* padding: 10px */
+    color: white;
+    transition: border-color 350ms ease-in-out;
+}
+
+.hero-headers.scrolled {
+    border-color: rgba(255, 255, 255, 1);
+}
+
+.hero-headers > h1 {
+    font-size: 76px;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: 0.19rem;
+    line-height: 92px;
+}
+
+.hero-headers h2 {
+    display: flex;
+    /* justify-content: center;
+     */
+    align-items: center;
+    font-size: 3.563rem;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    
+}
+
+.hero-headers h2 i {
+    font-style: normal;
+    color: hsla(353, 94%, 59%);
+    font-size: 3.163rem;
+    font-weight: 600;
+    /* justify-self: center; */
+    margin-inline: 10px;
+    /* text-shadow: 0px 0px 1px rgba(255, 255, 255, 1);; */
+
+}
+
+section.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 47vh;
+    width: 100%;
+    background-color: #000000;
+
+}
+
+.description > p {
+    display: flex;
+    margin: 0;
+    padding-inline: 78px;
+    padding-block: 50px;
+    width: 775px;
+    text-align: center;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    color: white;
+    border: 2px solid white;
+    outline: 2px solid white;
+    outline-offset: 4px;
+}
+
+section.contact-location-details {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    overflow-x: clip;
+
+    width: 100%;
+    height: 47vh;
+}
+
+.contact-location-details .carousel-container {
+    display: flex;
+    position: absolute;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: clip;
+
+    width: max-content;
+    height: 100%;
+    z-index: -1;
+
+    animation: move-left 70s linear infinite;
+}
+
+
+
+.contact-location-details .carousel-container .carousel-item {
+    position: relative;
+    width: auto;
+    height: 98%;
+    border: 4px solid white;
+    border-radius: 2px;
+    box-sizing: border-box;
+    margin-inline: 5px;
+    outline: 4px solid rgba(0,0,0,.2);
+    outline-offset: -10px;
+}
+
+.contact-location-details .carousel-container .carousel-item .overlay {
+    display: flex;
+    position: absolute;
+    background-color: rgba(0, 0, 1, .09);
+    width: 100%;
+    height: 100%;
+}
+
+
+.contact-location-details .carousel-container .carousel-item > img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+
+
+.contact-location-details > img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.location {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 581px;
+    height: 336px;
+
+    border: 2px solid white;
+    outline: 4px solid white;
+    outline-offset: 2px;
+    background-color: black;
+    margin-inline-start: 6.5277777777778%;
+    box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.65);
+
+}
+
+.location .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.location .contact-info > .visit-span,
+.location .contact-info span {
+    text-align: center;
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+.location .contact-info span .speak-span {
+    color: hsl(353, 94%, 59%);
+    font-style: normal;
+    font-family: 'Bitter', 'Inter', sans-serif;
+    font-size: 2.25rem;
+}
+
+
+.location .contact-info p {
+    font-size: 28px;
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 28px;
+    margin-top: 4px;
+}
+
+@keyframes move-left {
+    from {
+        transform: translateX(0%);
+    }
+    
+    to {
+        transform: translate(-50%);
+    }
+
+}
