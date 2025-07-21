@@ -52,14 +52,18 @@ export default function Main() {
     const carouselAfter = carouselImgs.map((item) => (
         <div key={item} className='carousel-item'>
             <div className='overlay'></div>
-            <img src={item} />
+            <img src={item} 
+                loading="lazy"
+            />
         </div>)
     )
     
     return (
         <main>
             <section className="hero">
-                <img src={hero} alt="51st Speakeasy Bar Area" />
+                <div className="image-container">
+                    <img src={hero} alt="51st Speakeasy Bar Area" />
+                </div>
                 <div ref={heroEl} className={scrollStateH ? "hero-headers scrolled": "hero-headers"}>
                     <h1>YOUR NEW FAVORITE SPOT</h1>
                     <h2>Eats <i>•</i> Drinks <i>•</i> Live Music</h2>
@@ -78,32 +82,46 @@ export default function Main() {
                         
                         <div className='carousel-item'>
                             <div className='overlay'></div>
-                            <img src={stage} />
+                            <img src={stage} 
+                                loading='lazy'                            
+                            />
                         </div>
                         <div className='carousel-item'>
                             <div className='overlay'></div>
-                            <img src={frankMugshot} />
+                            <img src={frankMugshot} 
+                                loading='lazy'                            
+                            />
                         </div>
                         <div className='carousel-item'>
                             <div className='overlay'></div>
-                            <img src={flowers} />
+                            <img src={flowers} 
+                                loading='lazy'                            
+                            />
                         </div>
                         <div className='carousel-item'>
                             <div className='overlay'></div>
-                            <img src={performers} />
+                            <img src={performers} 
+                                loading='lazy'                            
+                            />
                         </div>
                         <div className='carousel-item'>
                             <div className='overlay'></div>
-                            <img src={tennis} />
+                            <img src={tennis} 
+                                loading='lazy'                            
+                            />
                         </div>
                         
                         <div className='carousel-item'>
                             <div className='overlay'></div>
-                            <img src={hendrixMugshot} />
+                            <img src={hendrixMugshot} 
+                                loading='lazy'                            
+                            />
                         </div>
                         <div className='carousel-item'>
                             <div className='overlay'></div>
-                            <img src={poolTable} />
+                            <img src={poolTable} 
+                                loading='lazy'                            
+                            />
                         </div>
                         {carouselAfter}
                         

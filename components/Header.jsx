@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 export default function Header(props) {
     console.log(props.scrolled)
-
+    
     return (
         <header className="header">
             <nav className="header-nav">
