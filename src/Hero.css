@@ -308,17 +308,18 @@ section.contact-location-details {
 }
  @media (width < 50.625rem) {
     .hero {
-        height: 70vh;
+        height: 83vh;
     }
 
     .hero-headers > h1 {
-        font-size: 19px;
+        font-size: 57px;
+        /* font-size: 19px; */
         line-height: normal;
         letter-spacing: 2px;
     }
 
     .hero-headers h2 {
-        font-size: 16px;
+        font-size: 27.69px;
     }
 
     .hero-headers h2 i {

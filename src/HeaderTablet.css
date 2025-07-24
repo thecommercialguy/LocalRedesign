@@ -79,6 +79,10 @@
     margin: 0;
 }
 
+/* @media (width < 50.5rem) { 
+
+} */
+
 @keyframes display-menu {
     from {
         opacity: 0;
