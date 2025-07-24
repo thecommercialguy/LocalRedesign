@@ -21,25 +21,16 @@ export default function Main() {
 
     const heroEl = useRef()
 
-    // console.log((window.innerHeight / 264.5))
-    // console.log(window.innerHeight)
-    // console.log(.22 * window.innerHeight)
-    // console.log(window.scrollY)
-
     useEffect(()=>{
         // console.log(heroEl)
         const handleScroll = () => {
-        // console.log(heroEl.current.getBoundingClientRect().top)
-        // console.log(window.getComputedStyle(heroEl.current))
+
         // Could pass the header height in as a prop....
         const heroElProperties = heroEl.current.getBoundingClientRect()
         setScrollStateH(120 > (heroElProperties.y + (heroElProperties.height / 2) ))
-        // setScrollStateH(window.scrollY > (.23 * window.innerHeight))
-        // setScrollStateH(window.scrollY > (.25 * window.innerHeight))
-        // console.log(window.scrollY)
-        // console.log(scrollStateH)
+
     }
-    // 264.5
+
     window.addEventListener('scroll', handleScroll)
 
     return () => {

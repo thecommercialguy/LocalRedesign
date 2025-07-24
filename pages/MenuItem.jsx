@@ -6,13 +6,15 @@ export default function MenuItem(props) {
     return (
         <li key={props.item.title} className={"menu-list-item"}>
             <article className={"menu-item"}>
-                <i>{props.item.price}</i>
                 <div className="menu-item-image-container">
                     <img src={props.item.imageUrl} alt="" />
                     <div className={props.item.title === 'Wings' ? "overlay plus" : "overlay"}></div>
                 </div>
                 <div className="menu-item-contents">
+                    <div className="title-price-container">
                     <h2>{props.item.title}</h2>
+                    <i className="price">{props.item.price}</i>
+                    </div>
                     <p>{props.item.description}</p>
                 </div>
             </article>

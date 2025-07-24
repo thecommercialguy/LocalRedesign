@@ -2,11 +2,12 @@ import { useState, useRef, useEffect } from 'react'
 import BandPic from '../assets/band-pic.JPG'
 import BandPic1 from '../assets/band-pic-1.JPG'
 import BandPic2 from '../assets/band-pic-2.png'
+import BandPic3 from '../carousel/black-and-white.jpeg'
 
 export default function LiveMusic() {
 
 
-    const gallery = [BandPic, BandPic1, BandPic2]
+    const gallery = [BandPic, BandPic1, BandPic2, BandPic3]
 
     const [currGallery, setCurrGallery] = useState(gallery[0])
     const [nextGallery, setNextGallery] = useState(gallery[1])

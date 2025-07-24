@@ -87,11 +87,13 @@ section.description {
 }
 
 .description > p {
-    display: flex;
+    box-sizing: border-box;
+    display: block;
     margin: 0;
     padding-inline: 78px;
     padding-block: 50px;
-    width: 775px;
+    width: 935px;
+    /* height: 192.5px; */
     text-align: center;
 
     font-size: 1.5rem;
@@ -102,6 +104,9 @@ section.description {
     outline: 2px solid white;
     outline-offset: 4px;
 }
+/* 3.435% */
+/* 5.417% !important */
+/* width: 935px !important; */
 
 section.contact-location-details {
     display: flex;
@@ -228,7 +233,7 @@ section.contact-location-details {
 }
 
 
-@media (50.5rem < width < 90rem) {
+@media (50.625rem < width < 90rem) {
     section.hero {      
         height: 60vh;
     }
@@ -269,5 +274,69 @@ section.contact-location-details {
         /* height: ; */
     }
 
+    .description > p {
+        padding-inline: clamp(2rem, 3.975vw - 0.012rem, 3.563rem);
+        width: clamp(49.188rem, 23.492vw + 37.295rem, 58.438rem);
+
+    }
+
+    address.location {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+
+        /* width: 571px; */
+        height: 272px;
+        /* width: 582px;
+        height: 289px; */
+        background-color: rgba(0,0,0,.97);
+        outline: 4px solid rgba(255, 255, 255, 0.9);
+        /* padding: 0; */
+        margin: 0;
+
+    }
+
+    .location .contact-info > .visit-span, .location .contact-info span {
+        font-size: 30px;
+    }
+
+    .location .contact-info span .speak-span {
+        font-size: 31px;
+        padding-inline-end: 3px;
+    }
     
 }
+ @media (width < 50.625rem) {
+    .hero {
+        height: 70vh;
+    }
+
+    .hero-headers > h1 {
+        font-size: 19px;
+        line-height: normal;
+        letter-spacing: 2px;
+    }
+
+    .hero-headers h2 {
+        font-size: 16px;
+    }
+
+    .hero-headers h2 i {
+        font-size: 16px;
+    }
+
+    section.description {
+        height: 30vh;
+    }
+
+    .description > p {
+        width: 94%;
+        padding: 0;
+        
+        font-size: 16px;
+    }
+
+    address.location {
+        width: 94%;
+    }
+ }

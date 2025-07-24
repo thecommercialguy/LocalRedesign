@@ -6,7 +6,7 @@ export default function MenuMain() {
     const appetizerItems = [
         {
             title: 'Chips and House Made Salsa',
-            description: 'Delicious salsa and jalepenos.',
+            description: 'Crisy and flaky resturaunt-style chips serverd with chunky tomato salsa and jalepenos.',
             imageUrl: '../assets/chips-and-salsa.png',
             price: '$5'
         },
