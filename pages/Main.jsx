@@ -40,11 +40,11 @@ export default function Main() {
 
     }, [])
 
-    const carouselAfter = carouselImgs.map((item) => (
+    const carouselAfter = carouselImgs.map((item, idx) => (
         <div key={item} className='carousel-item'>
             <div className='overlay'></div>
             <img src={item} 
-                loading="lazy"
+                loading={idx === 0 ? "eager" : "lazy"}
             />
         </div>)
     )
