@@ -1,23 +1,34 @@
 import {useEffect, useRef, useState} from 'react'
 // import hero from '../assets/hero-img.png'
 import hero from '../src/assets/hero/hero-img.jpg'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules'
 // import contacts from '../assets/contacts-img.png'
-import flowers from '../carousel/caro-img-1.jpeg'
-import frankMugshot from '../src/assets/hero/frank-mugshot.webp'
+'../carousel/caro-img-1.jpeg'
+'../src/assets/hero/frank-mugshot.webp'
 // import bugsyMugshot from '../carousel/busgy-mugshot.png'
 // import bowieMugshot from '../carousel/david-bowie-mugshot.png'
-import hendrixMugshot from '../src/assets/hero/hendrix-mugshot.webp'
+'../src/assets/hero/hendrix-mugshot.webp'
 // import friends from '../carousel/caro-img.png'
-import poolTable from '../carousel/caro-img-3.jpeg'
+'../carousel/caro-img-3.jpeg'
 // import performer from '../carousel/caro-img-2.png'
-import tennis from '../src/assets/hero/tennis.webp'
+'../src/assets/hero/tennis.webp'
 // import stage from '../assets/band-pic.JPG'
-import stage from '../src/assets/hero/band-pic-small.png'
-import performers from '../assets/band-pic-2.png'
+'../src/assets/hero/band-pic-small.png'
+'../assets/band-pic-2.png'
 
 
 export default function Main() {
-    const [carouselImgs, setCarouselImgs] = useState([stage, frankMugshot, flowers, performers, tennis, hendrixMugshot, poolTable])
+    const [carouselImgs, setCarouselImgs] = useState([
+        '/carousel/band-pic-small.png', 
+        '/carousel/frank-mugshot.webp', 
+        '/carousel/caro-img-1.jpeg', 
+        '/carousel/band-pic-2.png', 
+        '/carousel/tennis.webp', 
+        '/carousel/hendrix-mugshot.webp', 
+        '/carousel/caro-img-3.jpeg'
+    ])
+    // const [carouselImgs, setCarouselImgs] = useState([stage, frankMugshot, flowers, performers, tennis, hendrixMugshot, poolTable])
 
     const [scrollStateH, setScrollStateH] = useState(false)
 
@@ -42,10 +53,10 @@ export default function Main() {
 
     }, [])
 
-    const carouselAfter = carouselImgs.map((item, idx) => (
-        <div key={item} className='carousel-item'>
+    const carouselItems = carouselImgs.map((imgScr, idx) => (
+        <div key={idx} className='carousel-item'>
             <div className='overlay'></div>
-            <img src={item} 
+            <img src={imgScr} 
                 loading={idx === 0 ? "eager" : "lazy"}
             />
         </div>)
@@ -71,9 +82,35 @@ export default function Main() {
 
             <section className="contact-location-details">
                     {/* <img src={contacts} alt="51st Speakeasy Stage Area" /> */}
-                    <div className="carousel-container">
+                    <Swiper
+                        modules={[Autoplay]}
+                        className="carousel-container"
+                        spaceBetween={10}
+                        slidesPerView={'auto'}
+                        loop={true}
+                        centeredSlides={true}
+                        speed={8000}
+                        autoplay={{
+                            delay: 0,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: false
+                        }}
+                    >
+                        {carouselImgs.map((imgSrc, idx) => (
+                            <SwiperSlide key={idx} className='carousel-item'>
+                                <div className='overlay'></div>
+                                <img
+                                    className='carousel-img'
+                                    src={imgSrc}
+                                    loading="lazy"
+                                />
+                            </SwiperSlide>
+                        ))}
                         
-                        <div className='carousel-item'>
+                    </Swiper>
+                    {/* <div className="carousel-container"> */}
+                        {/* {carouselItems} */}
+                        {/* <div className='carousel-item'>
                             <div className='overlay'></div>
                             <img src={stage} 
                                 loading='lazy'                            
@@ -115,13 +152,14 @@ export default function Main() {
                             <img src={poolTable} 
                                 loading='lazy'                            
                             />
-                        </div>
-                        {carouselAfter}
+                        </div> */}
+
+                        {/* {carouselAfter} */}
                         
                         
 
 
-                    </div>
+                    {/* </div> */}
                     {/* <div className="carousel-container after">
                         <div ref={test} className='carousel-item'>
                         <img src={carouselImg2} />
