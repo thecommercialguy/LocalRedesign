@@ -1,4 +1,4 @@
-import logo from '../assets/51st-Speakeay-logo.png'
+import logo from '../assets/51st-Speakeay-logo.webp'
 // import '../src/Header.css'
 import { Link } from 'react-router-dom'
 import MenuIcon from './MenuIcon.jsx'

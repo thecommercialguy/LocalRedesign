@@ -1,6 +1,6 @@
 import { useContext, useRef, useState } from "react"
 import { Link, NavLink } from 'react-router-dom'
-import logo  from '../assets/51st-Speakeay-logo.png'
+// import logo  from '../assets/51st-Speakeay-logo.png'
 import instagramIcon from '../assets/Instagram.svg'
 import facebookIcon from '../assets/Facebook.svg'
 import { ClickContext } from "../src/contexts/ClickContext"
