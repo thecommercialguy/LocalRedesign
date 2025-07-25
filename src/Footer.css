@@ -96,3 +96,22 @@
         object-fit: cover;
     }
 }
+
+@media (width < 50.265rem) {
+    .social-list {
+        margin-block-end: 1vh;
+    }
+
+    .social-list > li:first-of-type {
+        margin-inline-end: 11px;
+    }
+
+    .social-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .footer address span {
+        font-size: 8px;
+    }
+}

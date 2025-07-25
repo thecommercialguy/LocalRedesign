@@ -233,7 +233,7 @@ section.contact-location-details {
 }
 
 
-@media (50.625rem < width < 90rem) {
+@media (50.625rem < width < 71.25rem) {
     section.hero {      
         height: 60vh;
     }
@@ -311,6 +311,9 @@ section.contact-location-details {
         height: 83vh;
     }
 
+    .hero-headers {
+        align-items: flex-start;
+    }
     .hero-headers > h1 {
         font-size: 57px;
         /* font-size: 19px; */
@@ -327,17 +330,60 @@ section.contact-location-details {
     }
 
     section.description {
-        height: 30vh;
+        height: 40vh;
+        /* height: 30vh; */
     }
 
     .description > p {
-        width: 94%;
+        width: 95%;
+        padding: 49px;
+        font-size: 26px;
+        border: 1px solid white;
+        text-align: start;
+        padding-inline: 4px;
+        padding-block: 25px;
+        font-weight: 500;
+        border: none;
+        outline: none;
+        /* width: 94%;
         padding: 0;
         
-        font-size: 16px;
+        font-size: 16px; */
+    }
+
+    section.contact-location-details {
+        width: 100%;
+        height: 69vh;
+        align-items: revert;
+        align-items: center;
+        background-color: rgb(21, 21,21);
+    }
+
+    .contact-location-details .carousel-container {
+        height: 28vh;
+        position: relative;
+        background-color: rgb(21, 21,21);
+        z-index: 0;
     }
 
     address.location {
-        width: 94%;
+        width: 100%;
+        margin-inline: 0;
+        border: 0;
+        outline: 0;
+        background-color: rgb(21, 21,21);
+        box-shadow: none
     }
+
+    .location .contact-info > .visit-span, .location .contact-info span,
+    .location .contact-info span .speak-span {
+        font-size: 28px;
+    }
+
+    .location .contact-info p {
+        font-size: 25px;
+        font-weight: 300;
+        text-align: center;
+    }
+
  }

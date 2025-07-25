@@ -4,10 +4,13 @@ import { Link } from 'react-router-dom'
 import MenuIcon from './MenuIcon.jsx'
 import { useContext, useState } from 'react'
 import { ClickContext } from '../src/contexts/ClickContext.js'
+import { ScreenWidthContext } from '../src/contexts/ScreenWidthContext.js'
 
 
 export default function HeaderHome(props) {
     const {clicked, setClicked} = useContext(ClickContext)
+    const { windowWidth } = useContext(ScreenWidthContext)
+    const notDesktop = windowWidth < 1140
     // function handleClick(clicked) {
     //     return !clicked
 
@@ -18,11 +21,11 @@ export default function HeaderHome(props) {
             <nav className="header-nav">
 
                 <Link onClick={()=> {
-                    props.notDesktop ?
+                    notDesktop ?
                     setClicked(!clicked) :
                     ''
                 }} className="home-link" to="/"><img className="header-logo"src={logo} alt="51st Speakeasy logo" /></Link>
-                {props.notDesktop ? 
+                {notDesktop ? 
                     <MenuIcon />
                     // <MenuIcon handleClick={handleClick} />
                 :

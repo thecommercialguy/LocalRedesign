@@ -44,7 +44,10 @@
     height: 100%;
 
     font-family: 'Bitter', sans-serif;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);*/
+    border-inline-start: none;
+    border-start-start-radius: 0;
+    border-end-start-radius: 0;
 
 }
 .live-music-section .live-music-info-container::before {
@@ -98,6 +101,10 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
     outline: 4px solid rgba(0,0,0,.2);
     outline-offset: -10px;
+
+    border-inline-end: none;
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
 }
 .live-music-section .image-container::after {
     content: '';
@@ -169,6 +176,7 @@
         padding-block: 4.2vh;
         padding: 0;
         border: 4px double white;
+        border-radius: 2px;
     }
 
     .live-music-container {
@@ -183,18 +191,21 @@
         margin-inline-end: 0;
 
         max-width: none;
-    border-block-end: none;
-    border-end-start-radius: 0;
-    border-end-end-radius: 0;
+        /* border-radius: 2px; */
+        border-block-end: none;
+        border-end-start-radius: 0;
+        border-end-end-radius: 0;
         min-width: none;
-    box-shadow: none;
-    border: none;
+        box-shadow: none;
+        border: none;
         width: 100%;
+
     }
 
     .live-music-section .live-music-info-container {
         max-width:none;
         max-width: none;
+        /* border-radius: 2px; */
         border-start-start-radius: 0;
         border-start-end-radius: 0;
         border-block-start: none;

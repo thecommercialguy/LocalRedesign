@@ -4,6 +4,7 @@ import logo  from '../assets/51st-Speakeay-logo.png'
 import instagramIcon from '../assets/Instagram.svg'
 import facebookIcon from '../assets/Facebook.svg'
 import { ClickContext } from "../src/contexts/ClickContext"
+import { ScreenWidthContext } from "../src/contexts/ScreenWidthContext"
 
 const styles = {
     container: {
@@ -71,7 +72,9 @@ export default function MenuIcon(props) {
     // const [clicked, setClicked] = useState(false)
     console.log(ClickContext)
     const {clicked, setClicked } = useContext(ClickContext)
-
+    const { windowWidth } = useContext(ScreenWidthContext)
+    const mobile = windowWidth < 810
+    console.log(mobile)
     const topMenuBar = useRef(null)
 
     // event listener for event end displaying menu
