@@ -26,14 +26,14 @@ export default function Main() {
         '/carousel/band-pic-2.png', 
         '/carousel/tennis.webp', 
         '/carousel/hendrix-mugshot.webp', 
-        '/carousel/caro-img-3.jpeg',
-        '/carousel/band-pic-small.png', 
-        '/carousel/frank-mugshot.webp', 
-        '/carousel/caro-img-1.jpeg', 
-        '/carousel/band-pic-2.png', 
-        '/carousel/tennis.webp', 
-        '/carousel/hendrix-mugshot.webp', 
         '/carousel/caro-img-3.jpeg'
+        // '/carousel/band-pic-small.png', 
+        // '/carousel/frank-mugshot.webp', 
+        // '/carousel/caro-img-1.jpeg', 
+        // '/carousel/band-pic-2.png', 
+        // '/carousel/tennis.webp', 
+        // '/carousel/hendrix-mugshot.webp', 
+        // '/carousel/caro-img-3.jpeg'
     ])
     // const [carouselImgs, setCarouselImgs] = useState([stage, frankMugshot, flowers, performers, tennis, hendrixMugshot, poolTable])
 
@@ -97,21 +97,22 @@ export default function Main() {
                         slidesPerView={'auto'}
                         loop={true}
                         centeredSlides={true}
+                        initialSlide={0}
                         speed={6000}
                         onSwiper={(swiper)=> swiperRef.current = swiper}
-                        onTouchEnd={() => {
-                            if (swiperRef.current) {
-                                swiperRef.current.slideReset(5500)
-                            }
-                        }}
+                        // onTouchEnd={() => {
+                        //     if (swiperRef.current) {
+                        //         swiperRef.current.slideReset(5500)
+                        //     }
+                        // }}
                         autoplay={{
                             delay: 0,
-                            disableOnInteraction: false,
+                            disableOnInteraction: true,
                             pauseOnMouseEnter: false
                         }}
-                        noSwiping={true}
+                        // noSwiping={true}
                         // parallax={true}
-                        // oneWayMovement={true}
+                        oneWayMovement={true}
                         // zoom
                     >
                         {carouselImgs.map((imgSrc, idx) => (
@@ -120,7 +121,7 @@ export default function Main() {
                                 <img
                                     className='carousel-img'
                                     src={imgSrc}
-                                    loading="lazy"
+                                    loading="eager"
                                 />
                             </SwiperSlide>
                         ))}
@@ -128,90 +129,7 @@ export default function Main() {
                     </Swiper>
                     {/* <div className="carousel-container"> */}
                         {/* {carouselItems} */}
-                        {/* <div className='carousel-item'>
-                            <div className='overlay'></div>
-                            <img src={stage} 
-                                loading='lazy'                            
-                            />
-                        </div>
-                        <div className='carousel-item'>
-                            <div className='overlay'></div>
-                            <img src={frankMugshot} 
-                                loading='lazy'                            
-                            />
-                        </div>
-                        <div className='carousel-item'>
-                            <div className='overlay'></div>
-                            <img src={flowers} 
-                                loading='lazy'                            
-                            />
-                        </div>
-                        <div className='carousel-item'>
-                            <div className='overlay'></div>
-                            <img src={performers} 
-                                loading='lazy'                            
-                            />
-                        </div>
-                        <div className='carousel-item'>
-                            <div className='overlay'></div>
-                            <img src={tennis} 
-                                loading='lazy'                            
-                            />
-                        </div>
-                        
-                        <div className='carousel-item'>
-                            <div className='overlay'></div>
-                            <img src={hendrixMugshot} 
-                                loading='lazy'                            
-                            />
-                        </div>
-                        <div className='carousel-item'>
-                            <div className='overlay'></div>
-                            <img src={poolTable} 
-                                loading='lazy'                            
-                            />
-                        </div> */}
-
-                        {/* {carouselAfter} */}
-                        
-                        
-
-
-                    {/* </div> */}
-                    {/* <div className="carousel-container after">
-                        <div ref={test} className='carousel-item'>
-                        <img src={carouselImg2} />
-                        </div>
-                        <div className='carousel-item'>
-                        <img src={carouselImg1} />
-                        </div>
-                        <div className='carousel-item'>
-                        <img src={carouselImg} />
-                        </div>
-                        <div className='carousel-item'>
-                        <img src={carouselImg3} />
-                        </div>
-                        <div className='carousel-item'>
-                        <img src={carouselImg} />
-                        </div>
-                        <div className='carousel-item'>
-                        <img src={carouselImg2} />
-                        </div>
-                        <div className='carousel-item'>
-                        <img src={carouselImg1} />
-                        </div>
-                        <div className='carousel-item'>
-                        <img src={carouselImg} />
-                        </div>
-                        <div className='carousel-item'>
-                        <img src={carouselImg3} />
-                        </div>
-                        
-                        
-                        </div> */}
-                        {/* <div className='carousel-item'>
-                            <img src={carouselImg} />
-                            </div> */}
+                    
 
                     
                 <address className="location">
