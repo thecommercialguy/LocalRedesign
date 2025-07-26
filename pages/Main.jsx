@@ -3,23 +3,30 @@ import {useEffect, useRef, useState} from 'react'
 import hero from '../src/assets/hero/hero-img.jpg'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
-// import contacts from '../assets/contacts-img.png'
-'../carousel/caro-img-1.jpeg'
-'../src/assets/hero/frank-mugshot.webp'
-// import bugsyMugshot from '../carousel/busgy-mugshot.png'
-// import bowieMugshot from '../carousel/david-bowie-mugshot.png'
-'../src/assets/hero/hendrix-mugshot.webp'
-// import friends from '../carousel/caro-img.png'
-'../carousel/caro-img-3.jpeg'
-// import performer from '../carousel/caro-img-2.png'
-'../src/assets/hero/tennis.webp'
-// import stage from '../assets/band-pic.JPG'
-'../src/assets/hero/band-pic-small.png'
-'../assets/band-pic-2.png'
+// // import contacts from '../assets/contacts-img.png'
+// '../carousel/caro-img-1.jpeg'
+// '../src/assets/hero/frank-mugshot.webp'
+// // import bugsyMugshot from '../carousel/busgy-mugshot.png'
+// // import bowieMugshot from '../carousel/david-bowie-mugshot.png'
+// '../src/assets/hero/hendrix-mugshot.webp'
+// // import friends from '../carousel/caro-img.png'
+// '../carousel/caro-img-3.jpeg'
+// // import performer from '../carousel/caro-img-2.png'
+// '../src/assets/hero/tennis.webp'
+// // import stage from '../assets/band-pic.JPG'
+// '../src/assets/hero/band-pic-small.png'
+// '../assets/band-pic-2.png'
 
 
 export default function Main() {
     const [carouselImgs, setCarouselImgs] = useState([
+        '/carousel/band-pic-small.png', 
+        '/carousel/frank-mugshot.webp', 
+        '/carousel/caro-img-1.jpeg', 
+        '/carousel/band-pic-2.png', 
+        '/carousel/tennis.webp', 
+        '/carousel/hendrix-mugshot.webp', 
+        '/carousel/caro-img-3.jpeg',
         '/carousel/band-pic-small.png', 
         '/carousel/frank-mugshot.webp', 
         '/carousel/caro-img-1.jpeg', 
@@ -33,6 +40,7 @@ export default function Main() {
     const [scrollStateH, setScrollStateH] = useState(false)
 
     const heroEl = useRef()
+    const swiperRef= useRef(null)
 
     useEffect(()=>{
         // console.log(heroEl)
@@ -89,12 +97,22 @@ export default function Main() {
                         slidesPerView={'auto'}
                         loop={true}
                         centeredSlides={true}
-                        speed={8000}
+                        speed={6000}
+                        onSwiper={(swiper)=> swiperRef.current = swiper}
+                        onTouchEnd={() => {
+                            if (swiperRef.current) {
+                                swiperRef.current.slideReset(5500)
+                            }
+                        }}
                         autoplay={{
                             delay: 0,
                             disableOnInteraction: false,
                             pauseOnMouseEnter: false
                         }}
+                        noSwiping={true}
+                        // parallax={true}
+                        // oneWayMovement={true}
+                        // zoom
                     >
                         {carouselImgs.map((imgSrc, idx) => (
                             <SwiperSlide key={idx} className='carousel-item'>
