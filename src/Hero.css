@@ -419,11 +419,11 @@ section.contact-location-details {
         background-color: rgb(21, 21,21);
         box-shadow: none;
         justify-content: flex-start;
-        padding-block: 56px;
         padding-inline: 8px;
         box-sizing: border-box;
         position: relative;
         height: calc(var(--vh) * 39.86);
+        padding-block: 56px;
     }
 
     .location .contact-info > .visit-span, .location .contact-info span,
