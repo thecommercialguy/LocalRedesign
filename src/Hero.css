@@ -396,7 +396,8 @@ section.contact-location-details {
     .contact-location-details .carousel-container {
         /* height: 28vh; */
         /* height: calc(var(--vh) * 28); */
-        height: 45%;
+        height: 38%;
+        min-height: 222px;
         /* min-height: 224.267px; */
         /* height: 40%; */
         position: relative;
