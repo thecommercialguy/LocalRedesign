@@ -392,8 +392,9 @@ section.contact-location-details {
         background-color: rgb(21, 21,21);
         justify-content: flex-start;
         /* padding-block-start: 56px; */
-        padding-block-start: 9.5%;
+        /* padding-block-start: 9.5%; */
         padding-block: calc(var(--vh) * 8.8) calc(var(--vh) * 4.4);
+        /* padding-block: calc(var(--vh) * 8.8) calc(var(--vh) * 4.4); */
         /* padding-block: calc(var(--vh) * 8.8) calc(var(--vh) * 4.4); */
     }
 
@@ -425,8 +426,8 @@ section.contact-location-details {
         box-sizing: border-box;
         position: relative;
         height: max-content;
-        padding-block: calc(var(--vh) * 4.4);
-        /* padding-block: calc(var(--vh) * 4.4) calc(var(--vh) * 8.8); */
+        /* padding-block: calc(var(--vh) * 4.4); */
+        padding-block: calc(var(--vh) * 4.4) calc(var(--vh) * 8.8);
     }
 
     .location .contact-info > .visit-span, .location .contact-info span,
