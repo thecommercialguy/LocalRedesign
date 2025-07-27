@@ -99,7 +99,7 @@
 
 @media (width < 50.265rem) {
     .social-list {
-        margin-block-end: 1vh;
+        margin-block-end: var(--vh);
     }
 
     .social-list > li:first-of-type {
