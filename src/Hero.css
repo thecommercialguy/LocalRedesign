@@ -393,7 +393,7 @@ section.contact-location-details {
         justify-content: flex-start;
         /* padding-block-start: 56px; */
         padding-block-start: 9.5%;
-        padding-block: calc(var(--vh) * 8.8) calc(var(--vh) * 6.6);
+        padding-block: calc(var(--vh) * 8.8) calc(var(--vh) * 4.4);
     }
 
     .contact-location-details .carousel-container {
@@ -408,7 +408,7 @@ section.contact-location-details {
         z-index: 0;
         height: calc(var(--vh) * 30);
         /* height: calc(var(--vh) * 28); */
-        margin-block-end: calc(var(--vh) * 4.4);
+        /* margin-block-end: calc(var(--vh) * 4.4); */
     }
 
     address.location {
@@ -422,8 +422,8 @@ section.contact-location-details {
         padding-inline: 8px;
         box-sizing: border-box;
         position: relative;
-        height: calc(var(--vh) * 39.86);
-        padding-block: 56px;
+        height: max-content;
+        padding-block: calc(var(--vh) * 4.4);
     }
 
     .location .contact-info > .visit-span, .location .contact-info span,
@@ -435,6 +435,12 @@ section.contact-location-details {
         font-size: 25px;
         font-weight: 300;
         text-align: center;
+        margin-top: calc(var(--vh) * 1.1);
+        margin-bottom: calc(var(--vh) * 4.4);
+    }
+
+    .location .contact-info p.last {
+        margin-bottom: 0;
     }
 
  }

@@ -154,7 +154,7 @@ export default function Main() {
 
                     <div className="contact-info">
                         <span>Contact us:</span>
-                        <p>+1 (405) 463-0470 </p> 
+                        <p className='last'>+1 (405) 463-0470 </p> 
                     </div>
 
                 </address>
