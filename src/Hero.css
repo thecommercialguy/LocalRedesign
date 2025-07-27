@@ -331,7 +331,7 @@ section.contact-location-details {
     .hero {
         /* height: 83vh; */
         height: 83vh;
-        min-height: (var(--vh, 1vh) * 83);
+        /* min-height: (var(--vh, 1vh) * 83); */
         /* Aspectg ratio here */
     }
 
@@ -391,6 +391,7 @@ section.contact-location-details {
 
     .contact-location-details .carousel-container {
         height: 28vh;
+        min-height: 224.267px;
         /* height: 40%; */
         position: relative;
         background-color: rgb(21, 21,21);
