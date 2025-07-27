@@ -406,6 +406,7 @@ section.contact-location-details {
         background-color: rgb(21, 21,21);
         z-index: 0;
         height: calc(var(--vh) * 26);
+        margin-block-end: calc(var(--vh) * 4.4);
     }
 
     address.location {
