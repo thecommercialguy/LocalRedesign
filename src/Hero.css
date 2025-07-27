@@ -357,7 +357,8 @@ section.contact-location-details {
     }
 
     section.description {
-        height: 50vh;
+        height: calc(var(--vh) * 50);
+        /* height: 50vh; */
         /* height: 40vh; */
         /* height: 30vh; */
     }
@@ -382,7 +383,9 @@ section.contact-location-details {
 
     section.contact-location-details {
         width: 100%;
-        height: 69vh;
+        /* height: 69vh; */
+        height: calc(var(--vh) * 69);
+
         align-items: revert;
         align-items: center;
         background-color: rgb(21, 21,21);
@@ -390,8 +393,9 @@ section.contact-location-details {
     }
 
     .contact-location-details .carousel-container {
-        height: 28vh;
-        min-height: 224.267px;
+        /* height: 28vh; */
+        height: calc(var(--vh) * 38);
+        /* min-height: 224.267px; */
         /* height: 40%; */
         position: relative;
         background-color: rgb(21, 21,21);
