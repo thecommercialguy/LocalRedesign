@@ -425,7 +425,7 @@ section.contact-location-details {
         box-sizing: border-box;
         position: relative;
         height: max-content;
-        padding-block: calc(var(--vh) * 8.8);
+        padding-block: calc(var(--vh) * 4.4) calc(var(--vh) * 8.8);
     }
 
     .location .contact-info > .visit-span, .location .contact-info span,
