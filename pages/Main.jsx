@@ -44,6 +44,11 @@ export default function Main() {
 
     useEffect(()=>{
         // console.log(heroEl)
+        const setStaticVH = () => {
+        const vh = window.innerHeight * 0.01; // Calculate 1% of initial viewport height
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        setStaticVH()
         const handleScroll = () => {
 
         // Could pass the header height in as a prop....

@@ -329,7 +329,8 @@ section.contact-location-details {
 }
  @media (width < 50.625rem) {
     .hero {
-        height: 83vh;
+        /* height: 83vh; */
+        height: (var(--vh, 1vh) * 83);
         /* Aspectg ratio here */
     }
 
