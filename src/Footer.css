@@ -98,6 +98,9 @@
 }
 
 @media (width < 50.265rem) {
+    .footer {
+        padding-block: calc(--vh * 4);
+    }
     .social-list {
         margin-block-end: var(--vh);
     }
@@ -107,8 +110,8 @@
     }
 
     .social-icon {
-        width: 30px;
-        height: 30px;
+        width: 28px;
+        height: 28px;
     }
 
     .footer address span {
