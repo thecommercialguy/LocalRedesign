@@ -331,7 +331,7 @@ section.contact-location-details {
     .hero {
         /* height: 83vh; */
         /* height: 83vh; */
-        height: (var(--vh, 1vh) * 83);
+        height: calc(var(--vh) * 83);
         /* Aspectg ratio here */
     }
 

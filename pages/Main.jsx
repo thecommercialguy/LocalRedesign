@@ -64,11 +64,12 @@ export default function Main() {
     useEffect(()=> {
         const setStaticVH = () => {
             const vh = window.innerHeight * 0.01; // Calculate 1% of initial viewport height
+            console.log(vh)
             document.documentElement.style.setProperty('--vh', `${vh}px`);
             }
 
- 
-            window.addEventListener('resize',setStaticVH())
+            setStaticVH()
+            window.addEventListener('resize',setStaticVH)
     }, []);    
 
 
