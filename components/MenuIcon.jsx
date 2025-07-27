@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react"
+import { useContext, useEffect, useRef, useState } from "react"
 import { Link, NavLink } from 'react-router-dom'
 // import logo  from '../assets/51st-Speakeay-logo.png'
 import instagramIcon from '../assets/Instagram.svg'
@@ -21,9 +21,34 @@ const styles = {
         
         
     },
+    containerMobile: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative',
+        width: 'max-content',
+        height: 30,
+
+        cursor: 'pointer',
+        zIndex: 10
+        
+        
+    },
     bar: {
         width: 50,
         height: 3,
+        backgroundColor: 'white',
+        // marginBlockEnd: '12px',
+        borderRadius: '28px',
+        transition: 'transform 150ms ease-in-out',
+        transform: 'translateY(0) rotate(0)',
+        // transformOrigin: 'center' // <-- add this line
+
+    },
+    barMobile: {
+        width: 40,
+        height: 2,
         backgroundColor: 'white',
         // marginBlockEnd: '12px',
         borderRadius: '28px',
@@ -39,6 +64,17 @@ const styles = {
     barLast: {
         width: 50,
         height: 3,
+        backgroundColor: 'white',
+        borderRadius: '28px',
+        marginTop: '8px',
+        transition: 'transform 150ms ease-in-out',
+        transform: 'translateY(0) rotate(0)',
+        // transformOrigin: 'center' // <-- add this line
+
+    },
+    barLastMobile: {
+        width: 40,
+        height: 2,
         backgroundColor: 'white',
         borderRadius: '28px',
         marginTop: '8px',
@@ -65,6 +101,22 @@ const styles = {
         borderRadius: '28px',
         transition: 'transform 150ms ease-in-out',
         transform: 'translate(0, -3px) rotate(45deg)',
+    },
+    barClickedMobile: {
+        width: 40,
+        height: 3,
+        backgroundColor: 'white',
+        borderRadius: '28px',
+        transition: 'transform 150ms ease-in-out',
+        transform: ' translate(0) rotate(-45deg)',
+    },
+    barLastClickedMobile: {
+        width: 40,
+        height: 3,
+        backgroundColor: 'white',
+        borderRadius: '28px',
+        transition: 'transform 150ms ease-in-out',
+        transform: 'translate(0, -3px) rotate(45deg)',
     }
 }
 
@@ -73,19 +125,55 @@ export default function MenuIcon(props) {
     console.log(ClickContext)
     const {clicked, setClicked } = useContext(ClickContext)
     const { windowWidth } = useContext(ScreenWidthContext)
+    const [menuBars, setMenuBars] = useState({
+        container: styles.container,
+        topBar: styles.bar,
+        bottomBar: styles.barLast,
+        topBarClicked: styles.barClicked,
+        bottomBarClicked: styles.barLastClicked
+    })
     const mobile = windowWidth < 810
+    
     console.log(mobile)
+
     const topMenuBar = useRef(null)
+
+    useEffect(() => {
+        
+        mobile ? setMenuBars({
+            container: styles.containerMobile,
+            topBar: styles.barMobile,
+            bottomBar: styles.barLastMobile,
+            topBarClicked: styles.barClickedMobile,
+            bottomBarClicked: styles.barLastClickedMobile
+        }) : setMenuBars({
+            container: styles.container,
+            topBar: styles.bar,
+            bottomBar: styles.barLast,
+            topBarClicked: styles.barClicked,
+            bottomBarClicked: styles.barLastClicked
+        })
+            
+
+        // window.addEventListener('resize', changeBars)
+    }, [mobile])
+
+    
 
     // event listener for event end displaying menu
     
     return (
         <>
-        <div onClick={() => setClicked(!clicked)} style={styles.container} className="menu-icon-container">
+        <div onClick={() => setClicked(!clicked)} style={menuBars.container} className="menu-icon-container">
+            <div ref={topMenuBar} style={clicked ? menuBars.topBarClicked : menuBars.topBar} className="bar-1"></div>
+            <div style={clicked ? menuBars.bottomBarClicked : menuBars.bottomBar} className="bar-2"></div>
+
+        </div>
+        {/* <div onClick={() => setClicked(!clicked)} style={styles.container} className="menu-icon-container">
             <div ref={topMenuBar} style={clicked ? styles.barClicked : styles.bar} className="bar-1"></div>
             <div style={clicked ? styles.barLastClicked : styles.barLast} className="bar-2"></div>
 
-        </div>
+        </div> */}
         {clicked && 
             <div className="menu-overlay">
                 {/* <Link className="home-link" to="/"><img className="header-logo"src={logo} alt="51st Speakeasy logo" /></Link> */}
