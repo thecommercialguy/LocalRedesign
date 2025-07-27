@@ -392,7 +392,7 @@ section.contact-location-details {
         background-color: rgb(21, 21,21);
         /* padding-block-start: 56px; */
         padding-block-start: 9.5%;
-        padding-block: calc(var(--vh) * 8.8) calc(var(--vh) * 4.4);
+        padding-block: calc(var(--vh) * 8.8);
     }
 
     .contact-location-details .carousel-container {
@@ -405,7 +405,7 @@ section.contact-location-details {
         position: relative;
         background-color: rgb(21, 21,21);
         z-index: 0;
-        height: calc(var(--vh) * 26);
+        height: calc(var(--vh) * 28);
         margin-block-end: calc(var(--vh) * 4.4);
     }
 
