@@ -66,8 +66,11 @@ export default function Main() {
             const vh = window.innerHeight * 0.01; // Calculate 1% of initial viewport height
             document.documentElement.style.setProperty('--vh', `${vh}px`);
             }
-        setStaticVH()
-    })
+
+ 
+            window.addEventListener('resize',setStaticVH())
+    }, []);    
+
 
     const carouselItems = carouselImgs.map((imgScr, idx) => (
         <div key={idx} className='carousel-item'>
