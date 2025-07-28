@@ -137,7 +137,7 @@ export default function MenuMain() {
 
             {/* <br/> */}
             <h2>~Burgers~</h2>
-            <br/>
+            {/* <br/> */}
             <ul className="menu-list">
                 {burgerObjs}
             </ul>
