@@ -104,7 +104,7 @@ const styles = {
     },
     barClickedMobile: {
         width: 40,
-        height: 3,
+        height: 2,
         backgroundColor: 'white',
         borderRadius: '28px',
         transition: 'transform 150ms ease-in-out',
@@ -112,7 +112,7 @@ const styles = {
     },
     barLastClickedMobile: {
         width: 40,
-        height: 3,
+        height: 2,
         backgroundColor: 'white',
         borderRadius: '28px',
         transition: 'transform 150ms ease-in-out',
