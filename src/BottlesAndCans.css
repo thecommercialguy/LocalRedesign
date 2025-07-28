@@ -26,7 +26,7 @@
     width: 100%;
 }
 
-@media (50.5rem < width < 90rem) { 
+@media (50.625rem <= width < 90rem) { 
     .bottles-and-drinks-container .image-container {
         width: 100%;
     }

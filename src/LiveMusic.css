@@ -164,7 +164,7 @@
 /* opacity change  */
 /* Solid opacity -> Opacity decrease (curr) 
 -> [push next to curr programitically] -> Solid opacity -> Repeat */
-@media (50.625rem < width < 90rem) { 
+@media (50.625rem <= width < 90rem) { 
 /* @media (width < 90rem) {  */
     .live-music-section {
         flex-direction: column;

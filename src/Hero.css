@@ -257,7 +257,7 @@ section.contact-location-details {
 }
 
 
-@media (50.625rem < width < 71.25rem) {
+@media (50.625rem <= width < 71.25rem) {
     section.hero {      
         height: 60vh;
     }
