@@ -7,7 +7,7 @@ export default function MenuMain() {
         {
             title: 'Chips and House Made Salsa',
             description: 'Crisy and flaky resturaunt-style chips serverd with chunky tomato salsa and jalepenos.',
-            imageUrl: '/assets/chips-and-salsa.png',
+            imageUrl: '/assets/chips-and-salsa.webp',
             price: '$5'
         },
         {
@@ -19,13 +19,13 @@ export default function MenuMain() {
         {
             title: 'Coconut Shrimp',
             description: 'Seven delicious coconut shirpms served with Sweet Chili Sauce.',
-            imageUrl: '/assets/coconut-shrimp.png',
+            imageUrl: '/assets/coconut-shrimp.jpg',
             price: '$13'
         },
         {
             title: 'Fried Pickle Spears',
             description: 'Five decedant coconut shirpms served with house made Ranch dressing.',
-            imageUrl: '/assets/fried-pickle-spears.png',
+            imageUrl: '/assets/fried-pickle-spears.jpg',
             price: '$9'
         },
         {
@@ -37,7 +37,7 @@ export default function MenuMain() {
         {
             title: 'Wings',
             description: 'Six bone-in wings tossed in Your Choice of BBQ or Buffalo Sauce. Served with a Side of Celery and House Made Ranch.',
-            imageUrl: '/assets/wings.png',
+            imageUrl: '/assets/wings.webp',
             price: '$10'
         },
         {
@@ -130,20 +130,20 @@ export default function MenuMain() {
         <main className="menu-main">
 
             <h2>~Appetizers~</h2>
-            {/* <br/> */}
+
             <ul className="menu-list">
                 {appetizerObjs}
             </ul>
 
-            {/* <br/> */}
+  
             <h2>~Burgers~</h2>
-            {/* <br/> */}
+
             <ul className="menu-list">
                 {burgerObjs}
             </ul>
 
             <h2>~Others~</h2>
-            {/* <br/> */}
+      
             <ul className="menu-list">
                 {otherObjs}
             </ul>
