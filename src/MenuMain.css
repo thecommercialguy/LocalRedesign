@@ -34,7 +34,9 @@
     padding-inline-start: 0;
     padding-block-end: 2%;
     height: auto;
-    row-gap: 1.2%;
+    /* row-gap: 1.2%; */
+    row-gap: 28px;
+    /* row-gap: 3vh; */
     /* align-items: start; */
 
 }
@@ -44,6 +46,11 @@
     list-style: none;
     width: 100%;
     height: 100%;
+    border: 5px double white;
+    box-sizing: border-box;
+    border-radius: 2px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+
     /* display: flex; */
     /* overflow: clip; */
     /* grid-row: span 2; */
@@ -66,6 +73,7 @@
     /* width: 30%; */
     align-self: center;
     color: white;
+
     /* padding-inline: 8px; */
     /* margin-block-end: 20px; */
 }
@@ -90,7 +98,7 @@
     position: relative;
     width: 100%;
     margin-block-end: 0;
-    border: 5px double white;
+    /* border: 5px double white; */
     background-color: black;
     /* background-color: rgb(47, 47, 47); */
     /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); */
@@ -135,9 +143,9 @@
     padding-block: 17px 16px;
     background-color: black;
     /* border: 2px solid white; */
-    border: 5px double white;
+    /* border: 5px double white; */
     border-block-start: none;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); */
     
     /* test rule */
     padding-inline: 10px;
