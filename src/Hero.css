@@ -301,6 +301,10 @@ section.contact-location-details {
 
     }
 
+    .contact-location-details .carousel-container {
+        pointer-events: none;
+    }
+
     address.location {
         position: absolute;
         left: 50%;

@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react"
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 // import logo  from '../assets/51st-Speakeay-logo.png'
 import instagramIcon from '../assets/Instagram.svg'
 import facebookIcon from '../assets/Facebook.svg'
@@ -122,9 +122,10 @@ const styles = {
 
 export default function MenuIcon(props) {
     // const [clicked, setClicked] = useState(false)
-    console.log(ClickContext)
+    // console.log(ClickContext)
     const {clicked, setClicked } = useContext(ClickContext)
     const { windowWidth } = useContext(ScreenWidthContext)
+    const navigate = useNavigate();
     const [menuBars, setMenuBars] = useState({
         container: styles.container,
         topBar: styles.bar,
@@ -132,11 +133,28 @@ export default function MenuIcon(props) {
         topBarClicked: styles.barClicked,
         bottomBarClicked: styles.barLastClicked
     })
+    const [isMounted, setIsMounted] = useState(false)
+
+    const handleDelayedNavigate = (e, to) => {
+        // 1. Prevent the NavLink from navigating immediately
+        e.preventDefault();
+
+        // 2. Trigger the exit animation by setting state
+        setClicked(false);
+
+        // 3. Wait for the animation to finish, then navigate
+        // This timeout duration MUST match your animation duration (300ms)
+        setTimeout(() => {
+            navigate(to);
+        }, 290);
+    };
+
     const mobile = windowWidth < 810
     
     console.log(mobile)
 
     const topMenuBar = useRef(null)
+    // const topMenuBar = useRef(null)
 
     useEffect(() => {
         
@@ -153,10 +171,34 @@ export default function MenuIcon(props) {
             topBarClicked: styles.barClicked,
             bottomBarClicked: styles.barLastClicked
         })
-            
+        
+        
 
         // window.addEventListener('resize', changeBars)
     }, [mobile])
+
+    useEffect(() => {
+        if (clicked) {
+            setIsMounted(true)
+             console.log('P')
+        } else {
+            const timer = setTimeout(() => {
+                setIsMounted(false)
+            }, 290)
+            
+            return () => clearTimeout(timer)
+        }
+        // console.log('Ran')
+
+    }, [clicked])
+
+    function handleClick() {
+
+        setClicked(!clicked)
+        if (clicked === false) {
+
+        }
+    }
 
     
 
@@ -174,14 +216,15 @@ export default function MenuIcon(props) {
             <div style={clicked ? styles.barLastClicked : styles.barLast} className="bar-2"></div>
 
         </div> */}
-        {clicked && 
-            <div className="menu-overlay">
+        {isMounted && 
+            <div className={clicked ? "menu-overlay" : "menu-overlay hidden"}>
                 {/* <Link className="home-link" to="/"><img className="header-logo"src={logo} alt="51st Speakeasy logo" /></Link> */}
                 
                 <ul className="nav-links">
                     <li className="nav-item">
                         <NavLink
-                            onClick={() => setClicked(false)} 
+                            onClick={(e) => handleDelayedNavigate(e, '/eats')} 
+                            // onClick={() => setClicked(false)} 
                             className={({isActive})=> (isActive ? 'nav-link isActive' : 'nav-link')}
                             to="/eats">
                             Eats
@@ -189,7 +232,8 @@ export default function MenuIcon(props) {
                     </li>
                     <li className="nav-item">
                         <NavLink
-                            onClick={() => setClicked(false)} 
+                            onClick={(e) => handleDelayedNavigate(e, '/live-music')}
+                            // onClick={() => setClicked(false)} 
                             className={({isActive})=> (isActive ? 'nav-link isActive' : 'nav-link')}
                             to="/live-music">
                             Live Music
@@ -197,7 +241,8 @@ export default function MenuIcon(props) {
                     </li>
                     <li className="nav-item">
                         <NavLink
-                            onClick={() => setClicked(false)} 
+                            onClick={(e) => handleDelayedNavigate(e, '/bottles-and-cans')}
+                            // onClick={() => setClicked(false)} 
                             className={({isActive})=> (isActive ? 'nav-link isActive' : 'nav-link')}
                             to="/bottles-and-cans">
                             Bottles and Cans
