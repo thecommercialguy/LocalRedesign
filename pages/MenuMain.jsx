@@ -31,7 +31,7 @@ export default function MenuMain() {
         {
             title: 'House Made Hummus',
             description: 'Served with warm pita bread.',
-            imageUrl: '/assets/house-made-hummus.png',
+            imageUrl: '/assets/house-made-hummus.webp',
             price: '$9'
         },
         {
@@ -55,7 +55,7 @@ export default function MenuMain() {
         {
             title: 'Jalapeno Poppers',
             description: 'Eight delicious served with House Made Ranch.',
-            imageUrl: '/assets/jalepeno-poppers.JPG',
+            imageUrl: '/assets/jalepeno-poppers.webp',
             price: '$10'
         },
         {
