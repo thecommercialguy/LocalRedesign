@@ -79,9 +79,13 @@
     margin: 0;
 }
 
-/* @media (width < 50.5rem) { 
 
-} */
+@media (width < 50.625rem) { 
+
+    .header-nav .menu-overlay ul.nav-links li.nav-item .nav-link {
+        font-size: 36px;
+    }
+}
 
 @keyframes display-menu {
     from {

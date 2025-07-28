@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import MenuItem from "./MenuItem"
 
 export default function MenuMain() {
@@ -107,6 +107,17 @@ export default function MenuMain() {
             price: '$11'
         }
     ]
+    useEffect(()=> {
+            const setStaticVH = () => {
+                const vh = window.innerHeight * 0.01; // Calculate 1% of initial viewport height
+                console.log(vh)
+                
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+                }
+    
+                setStaticVH()
+                // window.addEventListener('resize',setStaticVH)
+        }, []);  
     // const [app, setApp] = useState(appetizerItems)
     const app = appetizerItems
 

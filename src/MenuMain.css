@@ -254,7 +254,23 @@
 @media (width < 50.625rem) { 
     .menu-main {
         padding-inline: 8px;
+        padding-block: var(--vh);
+        padding-block-end: calc(3*var(--vh));
+
         box-sizing: border-box;
+    }
+
+    .menu-main h2 {
+        /* text-align: left; */
+        /* font-size: 22px; */
+        font-size: 20.8px;
+
+        
+        /* padding: 0; */
+        margin-block-start: var(--vh);
+        margin-block-end: var(--vh);
+        
+        /* padding-block-end: 10px; */
     }
 
     .menu-list {
@@ -267,7 +283,8 @@
         grid-auto-flow: dense;
         gap: 2%;
         padding-inline-start: 0;
-        padding-block-end: 2%;
+        margin-block: var(--vh);
+        padding: 0;
         height: auto;
         row-gap: 16px;
         /* row-gap: 2%; */
