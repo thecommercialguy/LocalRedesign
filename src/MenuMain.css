@@ -283,7 +283,7 @@
         grid-auto-flow: dense;
         gap: 2%;
         padding-inline-start: 0;
-        margin-block: var(--vh);
+        margin-block: var(--vh) calc(var(--vh) * 2);
         padding: 0;
         height: auto;
         row-gap: 16px;
