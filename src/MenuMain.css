@@ -255,7 +255,7 @@
     .menu-main {
         padding-inline: 8px;
         padding-block: var(--vh);
-        padding-block-end: calc(3*var(--vh));
+        padding-block-end: calc(2*var(--vh));
 
         box-sizing: border-box;
     }
