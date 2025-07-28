@@ -255,7 +255,8 @@
     .menu-main {
         padding-inline: 8px;
         padding-block: var(--vh);
-        padding-block-end: calc(2*var(--vh));
+        padding-block-end: calc(3*var(--vh));
+        /* padding-block-end: calc(2*var(--vh)); */
 
         box-sizing: border-box;
     }
@@ -283,7 +284,7 @@
         grid-auto-flow: dense;
         gap: 2%;
         padding-inline-start: 0;
-        margin-block: var(--vh) calc(var(--vh) * 2);
+        margin-block: var(--vh) calc(var(--vh) * 3);
         padding: 0;
         height: auto;
         row-gap: 16px;
