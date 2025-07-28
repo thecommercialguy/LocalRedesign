@@ -232,6 +232,74 @@
 
 
 }
+
+@media (width < 50.625rem) { 
+    .live-music-section {
+        flex-direction: column;
+        width: 100%;
+        padding-inline: 0;
+        max-width: 716.383px;
+        max-width: 650.383px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+        padding-block: 4.2vh;
+        padding: 0;
+        border: 4px double white;
+        border-radius: 2px;
+    }
+
+    .live-music-container {
+        padding-inline: 8px;
+        padding-block: 4.2vh;
+
+    }
+
+
+    .live-music-section .image-container {
+        
+        margin-inline-end: 0;
+
+        max-width: none;
+        /* border-radius: 2px; */
+        border-block-end: none;
+        border-end-start-radius: 0;
+        border-end-end-radius: 0;
+        min-width: none;
+        box-shadow: none;
+        border: none;
+        width: 100%;
+
+    }
+
+    .live-music-section .live-music-info-container {
+        max-width:none;
+        max-width: none;
+        /* border-radius: 2px; */
+        border-start-start-radius: 0;
+        border-start-end-radius: 0;
+        border-block-start: none;
+        width: 100%;
+        border: none;
+        padding-block-start: 50px;
+        /* padding-block-start: 25px; */
+
+    }
+
+    .live-music-section .live-music-info-container h2 {
+        font-size: 1.125rem;
+    }
+
+    .live-music-section .live-music-info-container ul {
+        /* font-size: 1.125rem; */
+        margin-block-start: 8px;
+        margin-block-end: 16px;
+    }
+
+    .live-music-section .live-music-info-container li {
+        font-size: 18px;
+        margin-block-end: 4px;
+    }
+}
+
 @keyframes fade-in {
     from {
         opacity: 0;

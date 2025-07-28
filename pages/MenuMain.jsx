@@ -130,12 +130,12 @@ export default function MenuMain() {
         <main className="menu-main">
 
             <h2>~Appetizers~</h2>
-            <br/>
+            {/* <br/> */}
             <ul className="menu-list">
                 {appetizerObjs}
             </ul>
 
-            <br/>
+            {/* <br/> */}
             <h2>~Burgers~</h2>
             <br/>
             <ul className="menu-list">
@@ -143,7 +143,7 @@ export default function MenuMain() {
             </ul>
 
             <h2>~Others~</h2>
-            <br/>
+            {/* <br/> */}
             <ul className="menu-list">
                 {otherObjs}
             </ul>
