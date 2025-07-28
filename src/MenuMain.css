@@ -28,7 +28,7 @@
     width: 60%;
     /* height: max-content; */
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 1fr; 
+    /* grid-auto-rows: 1fr;  */
     /* grid-auto-flow: dense; */
     gap: 2%;
     padding-inline-start: 0;
@@ -229,10 +229,17 @@
 
   /* opacity: 0.95; */
 @media (50.625rem <= width < 90rem) { 
+    .menu-main {
+        /* padding-inline: 24px; */
+
+        box-sizing: border-box;
+    }
+
     .menu-list {
-        width: 87%;
+        /* width: 100%; */
+        width: 94.074074%;
         padding: 0;
-        gap: 1%;
+        /* gap: 1%; */
     }  
 
     .menu-item-contents h2 {
