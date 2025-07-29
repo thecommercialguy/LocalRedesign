@@ -22,7 +22,7 @@ export default function HeaderHome(props) {
 
                 <Link onClick={()=> {
                     notDesktop ?
-                    setClicked(!clicked) :
+                    setClicked(false) :
                     ''
                 }} className="home-link" to="/"><img className="header-logo"src={logo} alt="51st Speakeasy logo" /></Link>
                 {notDesktop ? 

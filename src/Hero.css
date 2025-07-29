@@ -344,6 +344,8 @@ section.contact-location-details {
         /* text-align: center; */
         padding-inline: 5px;
         padding-block: 12px;
+        margin-inline: 4px;
+        /* margin-inline: 8px; */
     }
     .hero-headers > h1 {
         font-size: 57px;

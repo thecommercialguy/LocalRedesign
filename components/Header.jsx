@@ -23,7 +23,7 @@ export default function Header(props) {
             <nav className="header-nav">
                 <Link onClick={()=> {
                     notDesktop ?
-                    setClicked(!clicked) :
+                    setClicked(false) :
                     ''
                 }}className="home-link" to="/"><img className="header-logo"src={logo} alt="51st Speakeasy logo" /></Link>
                 {notDesktop ? <MenuIcon /> :
