@@ -49,7 +49,9 @@
     border-start-start-radius: 0;
     border-end-start-radius: 0;
     box-sizing: border-box;
-    height: 647.2px;
+    /* height: 647.2px; */
+    /* height: 724.6px; */
+    height: 686.1px;
 
 }
 .live-music-section .live-music-info-container::before {
@@ -85,7 +87,9 @@
     position: relative;
     justify-content: center;
     /* width: 50%; */
-    width: 852.27px;
+    /* width: 852.27px; */
+    /* width: 955.46px; */
+    width: 904.14px;
     /* min-width: 852.27px; */
     /* max-width: 638px; */
     /* margin-inline-end: 20%; */
@@ -165,6 +169,29 @@
 
 }
 
+.live-music-section .live-music-info-container ul {
+    padding: 0;
+    /* justify-content: ; */
+    text-wrap: wrap;
+    box-sizing: border-box;
+    width: 100%;
+    /* padding-inline: 42px; */
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding-inline-start: 30%; */
+    /* padding-inline-end: 7%; */
+    padding-inline: 5%;
+    
+    list-style-position: inside;
+    margin-block: 8px 16px;
+}
+.live-music-section .live-music-info-container li {
+    text-align: center;
+    margin-block-end: 4px;
+}
+
 /* Have the images be in one place and bleed into one another... */
 /* opacity change  */
 /* Solid opacity -> Opacity decrease (curr) 
@@ -229,11 +256,21 @@
         /* font-size: 1.125rem; */
         margin-block-start: 8px;
         margin-block-end: 16px;
+        font-size: 1.125rem;
+        margin-block-start: 8px;
+        margin-block-end: 16px;
+        /* padding-inline: 0; */
+        align-items: center;
+        padding-inline: 20%;
+        list-style-position: inside;
+  
     }
 
     .live-music-section .live-music-info-container li {
         font-size: 18px;
-        margin-block-end: 4px;
+        /* margin-block-end: 4px; */
+        margin-block-end: 8px;
+        text-align: center;
     }
 
 
@@ -251,6 +288,7 @@
         padding: 0;
         border: 4px double white;
         border-radius: 2px;
+        height: auto;
     }
 
     .live-music-container {
@@ -300,11 +338,18 @@
         /* font-size: 1.125rem; */
         margin-block-start: 8px;
         margin-block-end: 16px;
+        padding: 0;
+        justify-content: flex-start;
+        align-items: center;
+        list-style-position: inside;
     }
 
     .live-music-section .live-music-info-container li {
         font-size: 18px;
         margin-block-end: 4px;
+        /* margin-block-end: 8px; */
+        text-align: center;
+        max-width: 83%;
     }
 }
 

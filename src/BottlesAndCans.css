@@ -68,6 +68,7 @@
     .bottles-and-drinks-container {
         padding-inline: 8px;
         cursor: pointer;
+        
     }
     .bottles-and-drinks-container .image-container {
         width: 100%;

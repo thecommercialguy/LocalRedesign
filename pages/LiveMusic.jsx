@@ -95,23 +95,21 @@ export default function LiveMusic() {
                     </ul>
                     <h2>Wednesdays - Free Live Music</h2>
                     <ul>
-                        <li>Burgers and Blues</li>
-                        <li>All Burgers $5 All Day</li>
-                        <li>7-10pm - No Cover</li>
-
+                        <li>Jazz night with Kendrick McKinney Trio</li>
+                        <li>8-12pm - No Cover</li>
                     </ul>
                     <h2>Thursdays - Free Live Music</h2>
                     <ul>
-                        <li>Burgers and Blues</li>
-                        <li>All Burgers $5 All Day</li>
-                        <li>7-10pm - No Cover</li>
+                        <li>Bluegrass and BBQ</li>
+                        <li>The Pearl Snaps Bluegrass Band</li>
+                        <li>The Blind Pig - BBQ Pulled Pork Sandwich, served with house made potato chips. <br/> $7 Bucks all day</li>
+                        <li>Music 8-11pm - No Cover</li>
 
                     </ul>
                     <h2>Fridays and Saturdays - Live Music</h2>
                     <ul>
-                        <li>Burgers and Blues</li>
-                        <li>All Burgers $5 All Day</li>
-                        <li>7-10pm - No Cover</li>
+                        <li>Bands Downstairs, <i>mostly</i>.</li>
+                        <li>DJS UPSTAIRS</li>
 
                     </ul>
                 </div>
