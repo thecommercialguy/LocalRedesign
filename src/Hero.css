@@ -344,8 +344,8 @@ section.contact-location-details {
         /* text-align: center; */
         padding-inline: 5px;
         padding-block: 12px;
-        /* margin-inline: 4px; */
-        margin-inline: 8px;
+        margin-inline: 4px;
+        /* margin-inline: 8px; */
     }
     .hero-headers > h1 {
         font-size: 57px;
@@ -376,7 +376,7 @@ section.contact-location-details {
 
     .description > p {
         width: 100%;
-        padding: 49px;
+        /* padding: 49px; */
         font-size: 26px;
         border: 1px solid white;
         text-align: start;
