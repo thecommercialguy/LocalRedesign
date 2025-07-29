@@ -131,6 +131,8 @@ export default function MenuMain() {
     const animation = usePageAnimation()
 
     return (
+        <>
+        <title> Eats | 51st Street Speakeasy</title>
         <motion.main
             variants={animation}  // Essentially like the instructions
             initial="initial"
@@ -164,6 +166,7 @@ export default function MenuMain() {
             
         
         </motion.main>
+        </>
        
     )
 }

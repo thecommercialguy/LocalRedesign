@@ -46,6 +46,8 @@ export default function LiveMusic() {
     const animation = usePageAnimation()
 
     return (
+        <>
+        <title>Live Music | 51st Street Speakeasy</title>
         <motion.div
             variants={animation}  // Essentially like the instructions
             initial="initial"
@@ -116,6 +118,6 @@ export default function LiveMusic() {
 
             </div>
         </motion.div>
-
+        </>
     )
 }

@@ -77,15 +77,6 @@ export default function Main() {
             // window.addEventListener('resize',setStaticVH)
     }, []);    
 
-
-    // const carouselItems = carouselImgs.map((imgScr, idx) => (
-    //     <div key={idx} className='carousel-item'>
-    //         <div className='overlay'></div>
-    //         <img src={imgScr} 
-    //             loading={idx === 0 ? "eager" : "lazy"}
-    //         />
-    //     </div>)
-    // )
     const carouselItems = carouselImgs.map((imgObj, idx) => (
         <SwiperSlide key={idx} className='carousel-item'>
             <div className='overlay'></div>
@@ -107,6 +98,8 @@ export default function Main() {
 
     
     return (
+        <>
+        <title>Home | 51st Street Speakesy</title>
         <motion.main
             variants={animation}  // Essentially like the instructions
             initial="initial"
@@ -117,7 +110,7 @@ export default function Main() {
         >
             <section className="hero">
                 <div className="image-container">
-                    <img src={hero} alt="51st Speakeasy Bar Area" />
+                    <img src={hero} alt="51st Street Speakeasy Bar Area" />
                 </div>
                 <div ref={heroEl} className={scrollStateH ? "hero-headers scrolled": "hero-headers"}>
                     <h1>YOUR NEW FAVORITE SPOT</h1>
@@ -184,6 +177,7 @@ export default function Main() {
 
 
         </motion.main>
+        </>
     )
 }
 // console.log(window.getComputedStyle(test.current).marginRight)

@@ -26,6 +26,8 @@ export default function BottlesAndCans() {
 
 
     return (
+        <>
+        <title>Bottles And Cans | 51st Street Speakeasy</title>
         <motion.div
             variants={animation}  // Essentially like the instructions
             initial="initial"
@@ -62,5 +64,6 @@ export default function BottlesAndCans() {
                 )}
             </AnimatePresence>
         </motion.div>
+        </>
     )
 }
