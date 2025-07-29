@@ -45,7 +45,7 @@
 }
 
 .social-list > li:hover {
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
 }
 
 .social-list > li:first-of-type {
@@ -60,9 +60,7 @@
 
 .social-link {
     display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
 
     z-index: 1;

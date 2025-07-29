@@ -409,18 +409,36 @@ export default function MenuIcon(props) {
                     >
                         <ul className="social-list">
                             <li>
-                                <a className="social-link"></a>
-                                <img className="social-icon"
-                                    src={instagramIcon}
-                                    alt="Instagram Icon"
-                                />
+                                <a 
+                                  className="social-link" 
+                                  href='https://www.instagram.com/the_speak/'
+                                  aria-label="Visit our Instagram page"
+                                  target='_blank'
+                                >
+                                  <motion.img 
+                                      whileHover={{ scale: 1.05}}
+                                      whileTap={{ scale: 0.9 }}
+                                      className="social-icon"
+                                      src={instagramIcon}
+                                      alt="Instagram Icon"
+                                  />
+                                </a>
                             </li>
                             <li>
-                                <a className="social-link"></a>
-                                <img className="social-icon"
-                                    src={facebookIcon}
-                                    alt="Facebook Icon"
-                                />
+                                <a
+                                  className="social-link"
+                                  href='https://www.facebook.com/profile.php?id=100063713253793'
+                                  aria-label="Visit our Facebook page"
+                                  target='_blank'
+                                >
+                                  <motion.img 
+                                      whileHover={{ scale: 1.05}}
+                                      whileTap={{ scale: 0.9 }}
+                                      className="social-icon"
+                                      src={facebookIcon}
+                                      alt="Facebook Icon"
+                                  />
+                                </a>
                             </li>
                         </ul>
                     </motion.nav>
