@@ -242,8 +242,7 @@ const socialVariants = {
 }
 
 export default function MenuIcon(props) {
-    // const [clicked, setClicked] = useState(false)
-    // console.log(ClickContext)
+
     const {clicked, setClicked } = useContext(ClickContext)
     const { windowWidth } = useContext(ScreenWidthContext)
     const navigate = useNavigate();
@@ -256,25 +255,22 @@ export default function MenuIcon(props) {
     })
     const [isMounted, setIsMounted] = useState(false)
 
-    // const handleDelayedNavigate = (e, to) => {
-    //     // 1. Prevent the NavLink from navigating immediately
-    //     e.preventDefault();
-
-    //     // 2. Trigger the exit animation by setting state
-    //     setClicked(false);
-
-    //     // 3. Wait for the animation to finish, then navigate
-    //     // This timeout duration MUST match your animation duration (300ms)
-    //     setTimeout(() => {
-    //         navigate(to);
-    //     }, 290);
-    // };
 
     const mobile = windowWidth < 810
     
     console.log(mobile)
 
     const topMenuBar = useRef(null)
+
+    useEffect(() => {
+      if (clicked) {
+        document.body.style.overflow = 'hidden'
+      }
+
+      return () => { // when unmounted
+        document.body.style.overflow = 'auto'
+      }
+    }, [clicked])
     // const topMenuBar = useRef(null)
 
     useEffect(() => {
