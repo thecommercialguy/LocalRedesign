@@ -11,6 +11,7 @@ export default function MenuItem(props) {
         <li key={props.item.title} className={"menu-list-item"}>
             <article className={"menu-item"}>
                 <div className="menu-item-image-container">
+                    {/* <div className="skeleton-loader"></div> */}
                     {!isLoaded && <div className="skelton-loader"></div>}
                     <img 
                         src={props.item.imageUrl} 
