@@ -288,7 +288,7 @@
         padding: 0;
         border: 4px double white;
         border-radius: 2px;
-        height: auto;
+        /* height: auto; */
     }
 
     .live-music-container {
@@ -311,6 +311,7 @@
         box-shadow: none;
         border: none;
         width: 100%;
+        /* height: auto; */
 
     }
 
@@ -325,7 +326,7 @@
         border: none;
         padding-block-start: 50px;
         padding-block-start: calc(2*var(--vh));
-        
+        height: auto;
         /* padding-block-start: 25px; */
 
     }
