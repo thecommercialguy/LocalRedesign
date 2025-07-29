@@ -33,3 +33,13 @@
         width: 100%;
     }
 }
+
+
+@media (width < 50.625rem) {
+    .bottles-and-drinks-container {
+        padding-inline: 16px;
+    }
+    .bottles-and-drinks-container .image-container {
+        width: 100%;
+    }
+}
