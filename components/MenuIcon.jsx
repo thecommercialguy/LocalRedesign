@@ -162,6 +162,77 @@ const navVariants = {
   },
   exit: {
     opacity: 0,
+    y: "150%",
+    transition: {
+      duration: 0.45,
+      ease: [0.4, 0, 0.2, 1]
+    }
+  }
+}
+const navVariants1 = {
+  initial: {
+    opacity: 0,
+    y: "200%" // Start off-screen above
+  },
+  animate: {
+    opacity: 1,
+    y: "0%", // Animate to its natural position
+    transition: {
+      duration: 0.55,
+      ease: [0.4, 0, 0.2, 1], // A nice easing curve
+    //   y: { type: "spring", stiffness: 500, damping: 1000 }
+    }
+  },
+  exit: {
+    opacity: 0,
+    y: "150%", // Animate out by moving up
+    transition: {
+      duration: 0.4,
+    //   duration: 0.45,
+      ease: [0.4, 0, 0.2, 1]
+    }
+  }
+}
+const navVariants2 = {
+  initial: {
+    opacity: 0,
+    y: "200%" // Start off-screen above
+  },
+  animate: {
+    opacity: 1,
+    y: "0%", // Animate to its natural position
+    transition: {
+      duration: 0.6,
+      ease: [0.4, 0, 0.2, 1], // A nice easing curve
+    //   y: { type: "spring", stiffness: 500, damping: 1000 }
+    }
+  },
+  exit: {
+    opacity: 0,
+    y: "150%", // Animate out by moving up
+    transition: {
+      duration: 0.35,
+      ease: [0.4, 0, 0.2, 1]
+    }
+  }
+}
+
+const socialVariants = {
+  initial: {
+    opacity: 0,
+    y: "200%" // Start off-screen above
+  },
+  animate: {
+    opacity: 1,
+    y: "0%", // Animate to its natural position
+    transition: {
+      duration: 0.5,
+      ease: [0.4, 0, 0.2, 1], // A nice easing curve
+    //   y: { type: "spring", stiffness: 500, damping: 1000 }
+    }
+  },
+  exit: {
+    opacity: 0,
     y: "150%", // Animate out by moving up
     transition: {
       duration: 0.45,
@@ -279,11 +350,12 @@ export default function MenuIcon(props) {
                     
                     <ul className="nav-links">
                         <motion.li 
-                        variants={navVariants}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                        className="nav-item">
+                            variants={navVariants}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit"
+                            className="nav-item"
+                        >
                             <NavLink
                                 // onClick={(e) => handleDelayedNavigate(e, '/eats')} 
                                 onClick={() => setClicked(false)} 
@@ -293,11 +365,12 @@ export default function MenuIcon(props) {
                             </NavLink>
                         </motion.li>
                         <motion.li 
-                        variants={navVariants}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                        className="nav-item">
+                            variants={navVariants1}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit"
+                            className="nav-item"
+                        >
                             <NavLink
                                 // onClick={(e) => handleDelayedNavigate(e, '/live-music')}
                                 onClick={() => setClicked(false)} 
@@ -307,11 +380,12 @@ export default function MenuIcon(props) {
                             </NavLink>
                         </motion.li>
                         <motion.li 
-                        variants={navVariants}
-                        initial="initial"
-                        animate="animate"
-                        exit="exit"
-                        className="nav-item">
+                            variants={navVariants2}
+                            initial="initial"
+                            animate="animate"
+                            exit="exit"
+                            className="nav-item"
+                        >
                             <NavLink
                                 // onClick={(e) => handleDelayedNavigate(e, '/bottles-and-cans')}
                                 onClick={() => setClicked(false)} 
@@ -325,7 +399,14 @@ export default function MenuIcon(props) {
                         <li className="nav-item"><NavLink className="nav-link" to="/bottles-and-cans">Bottles and Cans</NavLink></li> */}
                     </ul>
 
-                    <nav className="social-links" aria-label="Social Media Links">
+                    <motion.nav 
+                        ariants={navVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                        className="social-links" 
+                        aria-label="Social Media Links"
+                    >
                         <ul className="social-list">
                             <li>
                                 <a className="social-link"></a>
@@ -342,7 +423,7 @@ export default function MenuIcon(props) {
                                 />
                             </li>
                         </ul>
-                    </nav>
+                    </motion.nav>
                 </motion.div>}
             </AnimatePresence>
         </>
