@@ -3,6 +3,9 @@ import {useEffect, useRef, useState} from 'react'
 import hero from '../src/assets/hero/hero-img.jpg'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
+import { motion } from 'framer-motion'
+// import { getPageAnimation } from '../src/animations'
+import { usePageAnimation } from '../src/hooks/usePageAnimation'
 // // import contacts from '../assets/contacts-img.png'
 // '../carousel/caro-img-1.jpeg'
 // '../src/assets/hero/frank-mugshot.webp'
@@ -82,9 +85,23 @@ export default function Main() {
             />
         </div>)
     )
+
+    // const { windowWidth } = useContext(ScreenWidthContext)
+    // const notDesktop = windowWidth < 1140
+
+    const animation = usePageAnimation()
+
+
     
     return (
-        <main>
+        <motion.main
+            variants={animation}  // Essentially like the instructions
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={animation.transition}
+
+        >
             <section className="hero">
                 <div className="image-container">
                     <img src={hero} alt="51st Speakeasy Bar Area" />
@@ -162,7 +179,7 @@ export default function Main() {
 
 
 
-        </main>
+        </motion.main>
     )
 }
 // console.log(window.getComputedStyle(test.current).marginRight)

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
 import MenuItem from "./MenuItem"
+import { usePageAnimation } from "../src/hooks/usePageAnimation"
 
 export default function MenuMain() {
 
@@ -125,9 +127,18 @@ export default function MenuMain() {
     const appetizerObjs = appetizerItems.map(item => <MenuItem item={item}/>)
     const burgerObjs = burgerItems.map(item => <MenuItem item={item}/>)
     const otherObjs = otherItems.map(item => <MenuItem item={item}/>)
+    
+    const animation = usePageAnimation()
 
     return (
-        <main className="menu-main">
+        <motion.main
+            variants={animation}  // Essentially like the instructions
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={animation.transition}
+            className="menu-main"
+        >
 
             <h2>~Appetizers~</h2>
 
@@ -152,7 +163,7 @@ export default function MenuMain() {
             
             
         
-        </main>
+        </motion.main>
        
     )
 }

@@ -13,6 +13,7 @@ import MenuMain from '../pages/MenuMain'
 import Layout from '../components/Layout'
 import LiveMusic from '../pages/LiveMusic'
 import BottlesAndCans from '../pages/BottlesAndCans'
+import { AnimatePresence } from 'framer-motion'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -25,14 +26,16 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route element={<Layout/>}>
-          <Route path="/" element={<Main/>}/>
-          <Route path="/eats" element={<MenuMain/>}/>
-          <Route path="/live-music" element={<LiveMusic/>}/>
-          <Route path="/bottles-and-cans" element={<BottlesAndCans/>}/>
-        </Route>
-      </Routes>
+      <AnimatePresence mode="wait">
+        <Routes>
+          <Route element={<Layout/>}>
+            <Route path="/" element={<Main/>}/>
+            <Route path="/eats" element={<MenuMain/>}/>
+            <Route path="/live-music" element={<LiveMusic/>}/>
+            <Route path="/bottles-and-cans" element={<BottlesAndCans/>}/>
+          </Route>
+        </Routes>
+      </AnimatePresence>
     </BrowserRouter>
   )
 }

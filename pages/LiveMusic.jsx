@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
+import { motion } from "framer-motion"
 import BandPic from '../assets/band-pic.JPG'
 import BandPic1 from '../assets/band-pic-1.JPG'
 import BandPic2 from '../assets/band-pic-2.png'
 import BandPic3 from '../carousel/black-and-white.jpeg'
+import { usePageAnimation } from '../src/hooks/usePageAnimation'
 
 export default function LiveMusic() {
 
@@ -35,10 +37,17 @@ export default function LiveMusic() {
 
     // }, [currGallery, nextGallery])
 
-
+    const animation = usePageAnimation()
 
     return (
-        <div className="live-music-container">
+        <motion.div
+            variants={animation}  // Essentially like the instructions
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            transition={animation.transition}
+            className="live-music-container"
+        >
             <div className="live-music-section">
                 <div ref={galleryWindow} className='image-container'>
                     <img onAnimationEnd={transition} 
@@ -82,7 +91,7 @@ export default function LiveMusic() {
                 </div>
 
             </div>
-        </div>
+        </motion.div>
 
     )
 }
