@@ -264,17 +264,24 @@ export default function MenuIcon(props) {
 
     useEffect(() => {
       if (clicked) {
-          document.body.classList.add('no-scroll');
-      } else {
-          document.body.classList.remove('no-scroll');
+        document.body.style.overflow = 'hidden'
       }
 
-      // Cleanup on unmount
-      return () => {
-          document.body.classList.remove('no-scroll');
+      return () => { // when unmounted
+        document.body.style.overflow = 'auto'
       }
     }, [clicked])
-    // const topMenuBar = useRef(null)
+    // if (clicked) {
+    //         document.body.classList.add('no-scroll');
+    //     } else {
+    //         document.body.classList.remove('no-scroll');
+    //     }
+
+    //     // Cleanup on unmount
+    //     return () => {
+    //         document.body.classList.remove('no-scroll');
+    //     }
+    // // const topMenuBar = useRef(null)
 
     useEffect(() => {
         
