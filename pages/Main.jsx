@@ -6,6 +6,7 @@ import { Autoplay } from 'swiper/modules'
 import { motion } from 'framer-motion'
 // import { getPageAnimation } from '../src/animations'
 import { usePageAnimation } from '../src/hooks/usePageAnimation'
+import { mobileAnimation } from '../src/animations'
 // // import contacts from '../assets/contacts-img.png'
 // '../carousel/caro-img-1.jpeg'
 // '../src/assets/hero/frank-mugshot.webp'
@@ -23,13 +24,13 @@ import { usePageAnimation } from '../src/hooks/usePageAnimation'
 
 export default function Main() {
     const [carouselImgs, setCarouselImgs] = useState([
-        '/carousel/band-pic-small.png', 
-        '/carousel/frank-mugshot.webp', 
-        '/carousel/caro-img-1.jpeg', 
-        '/carousel/band-pic-2.png', 
-        '/carousel/tennis.webp', 
-        '/carousel/hendrix-mugshot.webp', 
-        '/carousel/caro-img-3.jpeg'
+        { src: '/carousel/band-pic-small.png', alt: 'An image of the 51st Speakeasy stage' }, 
+        { src: '/carousel/frank-mugshot.webp', alt: 'A mugshot of Frank Sinatra' }, 
+        { src: '/carousel/caro-img-1.jpeg', alt: 'A 51st Speakeast visitor holding floral arrangement' }, 
+        { src: '/carousel/band-pic-2.png', alt: 'A band performing on stage' }, 
+        { src: '/carousel/tennis.webp', alt: '51st Speakeasy visitors taking a selfie at the foosball table' }, 
+        { src: '/carousel/hendrix-mugshot.webp', alt: 'A mugshot of Jimi Hendrix' }, 
+        { src: '/carousel/caro-img-3.jpeg', alt: 'A pool table' }
         // '/carousel/band-pic-small.png', 
         // '/carousel/frank-mugshot.webp', 
         // '/carousel/caro-img-1.jpeg', 
@@ -77,19 +78,31 @@ export default function Main() {
     }, []);    
 
 
-    const carouselItems = carouselImgs.map((imgScr, idx) => (
-        <div key={idx} className='carousel-item'>
+    // const carouselItems = carouselImgs.map((imgScr, idx) => (
+    //     <div key={idx} className='carousel-item'>
+    //         <div className='overlay'></div>
+    //         <img src={imgScr} 
+    //             loading={idx === 0 ? "eager" : "lazy"}
+    //         />
+    //     </div>)
+    // )
+    const carouselItems = carouselImgs.map((imgObj, idx) => (
+        <SwiperSlide key={idx} className='carousel-item'>
             <div className='overlay'></div>
-            <img src={imgScr} 
-                loading={idx === 0 ? "eager" : "lazy"}
+            <img
+                className='carousel-img'
+                src={imgObj.src}
+                alt={imgObj.alt}
+                loading="eager"
             />
-        </div>)
-    )
+        </SwiperSlide>
+    ))
 
     // const { windowWidth } = useContext(ScreenWidthContext)
     // const notDesktop = windowWidth < 1140
 
-    const animation = usePageAnimation()
+    // const animation = usePageAnimation()
+    const animation = mobileAnimation
 
 
     
@@ -129,10 +142,10 @@ export default function Main() {
                         centeredSlides={true}
                         initialSlide={0}
                         speed={6000}
-                        onSwiper={(swiper)=> swiperRef.current = swiper}
+                        // onSwiper={(swiper)=> swiperRef.current = swiper}
                         // onTouchEnd={() => {
                         //     if (swiperRef.current) {
-                        //         swiperRef.current.slideReset(5500)
+                        //         swiperRef.current.slideReset(3000)
                         //     }
                         // }}
                         autoplay={{
@@ -142,19 +155,10 @@ export default function Main() {
                         }}
                         // noSwiping={true}
                         // parallax={true}
-                        oneWayMovement={true}
+                        // oneWayMovement={true}
                         // zoom
                     >
-                        {carouselImgs.map((imgSrc, idx) => (
-                            <SwiperSlide key={idx} className='carousel-item'>
-                                <div className='overlay'></div>
-                                <img
-                                    className='carousel-img'
-                                    src={imgSrc}
-                                    loading="eager"
-                                />
-                            </SwiperSlide>
-                        ))}
+                        {carouselItems}
                         
                     </Swiper>
                     {/* <div className="carousel-container"> */}

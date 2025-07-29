@@ -14,11 +14,17 @@ export default function LiveMusic() {
     const [currGallery, setCurrGallery] = useState(gallery[0])
     const [nextGallery, setNextGallery] = useState(gallery[1])
 
+    const [isLoadedCurr, setIsLoadedCurr] = useState(false)
+    const [isLoadedNext, setIsLoadedNext] = useState(false)
+    // const [initialLoadComplete, setInitialLoadComplete] = useState(false)
+
     const galleryWindow = useRef()
     const onStage = useRef()
     
         
         function transition() {
+            setIsLoadedNext(false)
+
             setCurrGallery((prev) => {
                 const currIdx = gallery.indexOf(prev)
                 const nextIdx = (currIdx + 1) % gallery.length
@@ -50,12 +56,30 @@ export default function LiveMusic() {
         >
             <div className="live-music-section">
                 <div ref={galleryWindow} className='image-container'>
-                    <img onAnimationEnd={transition} 
+                    {!isLoadedCurr && <div className="skelton-loader"></div>}
+                    <img 
+                        onAnimationEnd={transition} 
                         key={currGallery}
                         ref={onStage} 
+                        // className={initialLoadComplete ? "currGallery" : ""}
                         className="currGallery" 
-                        src={currGallery}/>
-                    <img key={nextGallery} className="nextGallery" src={nextGallery}/>
+                        src={currGallery}
+                        onLoad={()=>{
+                            setIsLoadedCurr(true)
+                            // setInitialLoadComplete(true)
+                        }}
+                        style={{ display: isLoadedCurr ? 'block' : 'none' }}
+                        />
+                    <img 
+                        key={nextGallery} 
+                        className="nextGallery" 
+                        src={nextGallery}
+                        onLoad={()=>{
+                            console.log('Loaded')
+                            setIsLoadedNext(true)
+                        }}
+                        style={{ display: isLoadedCurr ? 'block' : 'none' }}
+                    />
                 </div>
                 
                 <div className="live-music-info-container">

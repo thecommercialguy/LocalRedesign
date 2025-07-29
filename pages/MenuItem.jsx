@@ -12,7 +12,7 @@ export default function MenuItem(props) {
             <article className={"menu-item"}>
                 <div className="menu-item-image-container">
                     {/* <div className="skeleton-loader"></div> */}
-                    {!isLoaded && <div className="skelton-loader"></div>}
+                    {!isLoaded && <div className="skelton-loader menu"></div>}
                     <img 
                         src={props.item.imageUrl} 
                         alt={`Photo of ${props.item.title}`} 
