@@ -12,3 +12,12 @@ body {
   /* min-height: 100vh; */
 }
 
+/* Add this to your global stylesheet */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* If your #root is the scrolling element, target that instead/as well */
+body.no-scroll #root {
+    overflow: hidden;
+}

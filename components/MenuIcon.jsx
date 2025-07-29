@@ -264,11 +264,14 @@ export default function MenuIcon(props) {
 
     useEffect(() => {
       if (clicked) {
-        document.body.style.overflow = 'hidden'
+          document.body.classList.add('no-scroll');
+      } else {
+          document.body.classList.remove('no-scroll');
       }
 
-      return () => { // when unmounted
-        document.body.style.overflow = 'auto'
+      // Cleanup on unmount
+      return () => {
+          document.body.classList.remove('no-scroll');
       }
     }, [clicked])
     // const topMenuBar = useRef(null)
