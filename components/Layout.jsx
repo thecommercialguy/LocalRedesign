@@ -67,8 +67,8 @@ export default function Layout() {
                     {/* {pathname === '/' ? <HeaderHome notDesktop={windowWidth} scrolled={scrollState}/> : <Header notDesktop={windowWidth}  />} */}
                 </ClickContext.Provider>
                 <Outlet/>
+                <Footer/>
             </ScreenWidthContext.Provider>
-            <Footer/>
         </>
     )
 }
