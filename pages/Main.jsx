@@ -113,7 +113,7 @@ export default function Main() {
             </section>
 
             <section className="description">
-                <p>Enjoy an eccliectic experince with a variety of vibes. Jazz, Rock, Electronic 
+                <p>Enjoy an eclectic experince with a variety of vibes. Jazz, Rock, Electronic 
                     and much more. Enjoy bottles and cans local and domestic. Come visit one of 
                     OKC’s most unique spots.</p>
             </section>

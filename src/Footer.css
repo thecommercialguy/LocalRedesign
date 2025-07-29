@@ -97,7 +97,7 @@
     }
 }
 
-@media (width < 50.265rem) {
+@media (width < 50.625rem) {
     .footer {
         padding-block: calc(--vh * 4);
     }

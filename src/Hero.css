@@ -363,21 +363,27 @@ section.contact-location-details {
     }
 
     section.description {
-        height: calc(var(--vh) * 50);
+
+        padding-block: calc(var(--vh) * 17);
+        padding-inline: 8px;
+        height: max-content;
+        box-sizing: border-box;
+        /* height: calc(var(--vh) * 50); */
         /* height: 50vh; */
         /* height: 40vh; */
         /* height: 30vh; */
     }
 
     .description > p {
-        width: 95%;
+        width: 100%;
         padding: 49px;
         font-size: 26px;
         border: 1px solid white;
         text-align: start;
-        padding-inline: 4px;
-        padding-block: 25px;
+        /* padding-inline: 4px; */
+        /* padding-block: 25px; */
         /* font-weight: 500; */
+        padding: 0;
         font-weight: 400;
         border: none;
         outline: none;
