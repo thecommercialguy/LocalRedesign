@@ -108,6 +108,7 @@
     border-block-end: none;
     border-end-start-radius: 0;
     border-end-end-radius: 0;
+    aspect-ratio: 403.083/269.383;
     /* ; */
     
 }
@@ -115,7 +116,7 @@
 .menu-item-image-container > img {
     width: 100%;
     object-fit: cover;
-    aspect-ratio: 403.083/269.383;
+    
     
     
     /* margin-block-end: 15px; */
