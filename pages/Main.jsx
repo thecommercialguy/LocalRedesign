@@ -4,7 +4,7 @@ import hero from '../src/assets/hero/hero-img.jpg'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import { motion } from 'framer-motion'
-import 'swiper/css'
+// import 'swiper/css'
 import 'swiper/css/autoplay'
 // import { getPageAnimation } from '../src/animations'
 import { usePageAnimation } from '../src/hooks/usePageAnimation'
@@ -37,7 +37,8 @@ export default function Main() {
 
     ])
     // const [carouselImgs, setCarouselImgs] = useState([stage, frankMugshot, flowers, performers, tennis, hendrixMugshot, poolTable])
-    const loopedCarouselImgs = [...carouselImgs, ...carouselImgs]
+    const loopedCarouselImgs = [...carouselImgs, ...carouselImgs, ...carouselImgs]
+    // console.log(carouselImgs)
     const [scrollStateH, setScrollStateH] = useState(false)
 
     const [swiper, setSwiper] = useState(null)  // Fix to autoplay issue
@@ -46,23 +47,20 @@ export default function Main() {
     const swiperRef= useRef(null)
 
 
-    useEffect(() => {
+    // useEffect(() => {
         
-        if (swiper) {
-            // Manual start
-            const timeoutId = setTimeout(() => {
-                swiper.update()
+    //     if (swiper) {
+    //         // Manual start
+    //         const timeoutId = setTimeout(() => {
+    //             swiper.update()
+    //             swiper.autoplay.start()
+    //         }, 500)
 
-
-                swiper.autoplay.start()
-            }, 500)
-
-            return () => clearTimeout(timeoutId)
-        }
-    }, [swiper]) 
+    //         return () => clearTimeout(timeoutId)
+    //     }
+    // }, [swiper]) 
 
     useEffect(()=>{
-        // console.log(heroEl)
         const handleScroll = () => {
 
         // Could pass the header height in as a prop....
@@ -93,7 +91,7 @@ export default function Main() {
             // window.addEventListener('resize',setStaticVH)
     }, [])
 
-    const carouselItems = loopedCarouselImgs.map((imgObj, idx) => (
+    const carouselItems = carouselImgs.map((imgObj, idx) => (
         <SwiperSlide key={idx} className='carousel-item'>
             <div className='overlay'></div>
             <img
@@ -149,7 +147,7 @@ export default function Main() {
                         slidesPerView={'auto'}
                         loop={true}
                         centeredSlides={true}
-                        initialSlide={0}
+                        // initialSlide={0}
                         speed={6000}
                         // onSwiper={(swiper)=> swiperRef.current = swiper}
                         // onTouchEnd={() => {
@@ -157,16 +155,16 @@ export default function Main() {
                         //         swiperRef.current.slideReset(3000)
                         //     }
                         // }}
-                        onSwiper={(swiper) => {
-                                swiper.autoplay.stop()
-                                setSwiper(swiper)
-                        }}
+                        // onSwiper={(swiper) => {
+                        //         // swiper.autoplay.stop()
+                        //         // setSwiper(swiper)÷\
+                        // }}
                         autoplay={{
                             delay: 0,
                             disableOnInteraction: false,
-                            waitForTransition: false
+                            // waitForTransition: false.
                         }}
-                    
+                        // autoplay={true}
                         // noSwiping={true}
                         // parallax={true}
                         // oneWayMovement={true}
