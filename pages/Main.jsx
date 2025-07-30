@@ -31,14 +31,15 @@ export default function Main() {
         { src: '/carousel/band-pic-2.png', alt: 'A band performing on stage' }, 
         { src: '/carousel/tennis.webp', alt: '51st Speakeasy visitors taking a selfie at the foosball table' }, 
         { src: '/carousel/hendrix-mugshot.webp', alt: 'A mugshot of Jimi Hendrix' }, 
+        { src: '/carousel/caro-img-3.jpeg', alt: 'A pool table' },
+        { src: '/carousel/band-pic-small.png', alt: 'An image of the 51st Speakeasy stage' }, 
+        { src: '/carousel/frank-mugshot.webp', alt: 'A mugshot of Frank Sinatra' }, 
+        { src: '/carousel/caro-img-1.jpeg', alt: 'A 51st Speakeast visitor holding floral arrangement' }, 
+        { src: '/carousel/band-pic-2.png', alt: 'A band performing on stage' }, 
+        { src: '/carousel/tennis.webp', alt: '51st Speakeasy visitors taking a selfie at the foosball table' }, 
+        { src: '/carousel/hendrix-mugshot.webp', alt: 'A mugshot of Jimi Hendrix' }, 
         { src: '/carousel/caro-img-3.jpeg', alt: 'A pool table' }
-        // '/carousel/band-pic-small.png', 
-        // '/carousel/frank-mugshot.webp', 
-        // '/carousel/caro-img-1.jpeg', 
-        // '/carousel/band-pic-2.png', 
-        // '/carousel/tennis.webp', 
-        // '/carousel/hendrix-mugshot.webp', 
-        // '/carousel/caro-img-3.jpeg'
+
     ])
     // const [carouselImgs, setCarouselImgs] = useState([stage, frankMugshot, flowers, performers, tennis, hendrixMugshot, poolTable])
 
