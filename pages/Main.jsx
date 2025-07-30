@@ -4,6 +4,8 @@ import hero from '../src/assets/hero/hero-img.jpg'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import { motion } from 'framer-motion'
+import 'swiper/css';
+import 'swiper/css/autoplay';
 // import { getPageAnimation } from '../src/animations'
 import { usePageAnimation } from '../src/hooks/usePageAnimation'
 import { mobileAnimation } from '../src/animations'
@@ -155,7 +157,7 @@ export default function Main() {
                         //         swiperRef.current.slideReset(3000)
                         //     }
                         // }}
-                        onSwiper={(swiper) => {setSwiper(swiper)}}
+                        onSwiper={setSwiper}
                         autoplay={{
                             delay: 0,
                             disableOnInteraction: false,
