@@ -36,6 +36,8 @@ export default function Main() {
         { src: '/carousel/caro-img-3.jpeg', alt: 'A pool table' }
 
     ])
+    const [isResetting, setIsResetting] = useState(false); // State to track if a reset is in progress
+    const [idx, setIdx] = useState(null)
     // const [carouselImgs, setCarouselImgs] = useState([stage, frankMugshot, flowers, performers, tennis, hendrixMugshot, poolTable])
     const loopedCarouselImgs = [...carouselImgs, ...carouselImgs, ...carouselImgs]
     // console.log(carouselImgs)
@@ -146,23 +148,67 @@ export default function Main() {
                         spaceBetween={10}
                         slidesPerView={'auto'}
                         loop={true}
+                        ref={swiperRef}
                         centeredSlides={true}
                         // initialSlide={0}
                         speed={6000}
                         // onSwiper={(swiper)=> swiperRef.current = swiper}
-                        // onTouchEnd={() => {
-                        //     if (swiperRef.current) {
-                        //         swiperRef.current.slideReset(3000)
-                        //     }
-                        // }}
+                        onTouchStart={(swiper) => {
+                            // swiper.autoplay.stop()
+                            // if (swiperRef.current) {
+                            //     // swiper.activeIndex()
+                            //     swiperRef.current.clickedIndex
+                            //     console.log(swiper.activeIndex)
+                                
+                            //     // swiperRef.current.autoplay.pause();
+                            // }
+                        }}
+                        // onTouchMove={(swiper) => {
+                        //     // swiper.autoplay.pause()
+                        //     console.log(swiper.realIndex)
+                        // }
+                        
+
+                        // }
+                        onTouchEnd={(swiper) => {
+                            swiper.slideToClosest(550, false)
+                            // swiper.autoplay.start()
+
+                            // swiper.slideToClosest(1000, false) // Okay sol
+                            // swiper.slideReset(1000, false)
+                            // swiper.slideToLoop(swiper.realIndex, 1000, false)
+                            
+                            // swiper.autoplay.start()
+                            // swiper.autoplay.
+                            // if (swiperRef.current) {
+                            //     // swiperRef.current.autoplay.start();
+                            //     // swiperRef.current.slideReset(100)
+                            //     console.log(swiper.realIndex, "end")
+                            // }
+                        }}
+
                         // onSwiper={(swiper) => {
                         //         // swiper.autoplay.stop()
                         //         // setSwiper(swiper)÷\
                         // }}
+                        // onTransitionEnd={() => {
+                        // // 4. Check if the transition that just ended was our reset
+                        //     if (isResetting) {
+                        //         console.log('Slide reset transition has ended!');
+                        //         setIsResetting(false); // Reset the flag
+
+                        //         // Now, restart the autoplay
+                        //         if (swiperRef.current) {
+                        //             swiperRef.current.autoplay.start();
+                        //         }
+                        //     }
+                        // }}
+                        
                         autoplay={{
                             delay: 0,
                             disableOnInteraction: false,
-                            // waitForTransition: false.
+                            // waitForTransition: false
+                            
                         }}
                         // autoplay={true}
                         // noSwiping={true}
