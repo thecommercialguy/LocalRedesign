@@ -49,7 +49,7 @@ export default function Main() {
         if (swiper) {
             // Manual start
             const timeoutId = setTimeout(() => {
-                swiper.update()
+                // swiper.update()
 
 
                 swiper.autoplay.start()
