@@ -7,6 +7,7 @@ import { motion } from 'framer-motion'
 // import { getPageAnimation } from '../src/animations'
 import { usePageAnimation } from '../src/hooks/usePageAnimation'
 import { mobileAnimation } from '../src/animations'
+// import Swiper from 'swiper'
 // // import contacts from '../assets/contacts-img.png'
 // '../carousel/caro-img-1.jpeg'
 // '../src/assets/hero/frank-mugshot.webp'
@@ -43,8 +44,19 @@ export default function Main() {
 
     const [scrollStateH, setScrollStateH] = useState(false)
 
+    const [swiper, setSwiper] = useState(null)  // Fix to autoplay issue
+
     const heroEl = useRef()
     const swiperRef= useRef(null)
+
+
+    useEffect(() => {
+        // Initallized
+        if (swiper) {
+            // Manual start
+            swiper.autoplay.start()
+        }
+    }, [swiper]) 
 
     useEffect(()=>{
         // console.log(heroEl)
@@ -55,6 +67,7 @@ export default function Main() {
         setScrollStateH(120 > (heroElProperties.y + (heroElProperties.height / 2) ))
 
     }
+
 
     window.addEventListener('scroll', handleScroll)
 
@@ -75,7 +88,7 @@ export default function Main() {
 
             setStaticVH()
             // window.addEventListener('resize',setStaticVH)
-    }, []);    
+    }, [])
 
     const carouselItems = carouselImgs.map((imgObj, idx) => (
         <SwiperSlide key={idx} className='carousel-item'>
@@ -141,6 +154,7 @@ export default function Main() {
                         //         swiperRef.current.slideReset(3000)
                         //     }
                         // }}
+                        onSwiper={(swiper) => {setSwiper(swiper)}}
                         autoplay={{
                             delay: 0,
                             disableOnInteraction: false,
