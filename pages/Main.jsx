@@ -45,15 +45,15 @@ export default function Main() {
 
 
     useEffect(() => {
-        // Initallized
+        Initallized
         if (swiper) {
             // Manual start
             const timeoutId = setTimeout(() => {
-                // swiper.update()
+                swiper.update()
 
 
                 swiper.autoplay.start()
-            }, 100)
+            }, 1000)
 
             return () => clearTimeout(timeoutId)
         }
