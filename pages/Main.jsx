@@ -31,18 +31,11 @@ export default function Main() {
         { src: '/carousel/band-pic-2.png', alt: 'A band performing on stage' }, 
         { src: '/carousel/tennis.webp', alt: '51st Speakeasy visitors taking a selfie at the foosball table' }, 
         { src: '/carousel/hendrix-mugshot.webp', alt: 'A mugshot of Jimi Hendrix' }, 
-        { src: '/carousel/caro-img-3.jpeg', alt: 'A pool table' },
-        { src: '/carousel/band-pic-small.png', alt: 'An image of the 51st Speakeasy stage' }, 
-        { src: '/carousel/frank-mugshot.webp', alt: 'A mugshot of Frank Sinatra' }, 
-        { src: '/carousel/caro-img-1.jpeg', alt: 'A 51st Speakeast visitor holding floral arrangement' }, 
-        { src: '/carousel/band-pic-2.png', alt: 'A band performing on stage' }, 
-        { src: '/carousel/tennis.webp', alt: '51st Speakeasy visitors taking a selfie at the foosball table' }, 
-        { src: '/carousel/hendrix-mugshot.webp', alt: 'A mugshot of Jimi Hendrix' }, 
         { src: '/carousel/caro-img-3.jpeg', alt: 'A pool table' }
 
     ])
     // const [carouselImgs, setCarouselImgs] = useState([stage, frankMugshot, flowers, performers, tennis, hendrixMugshot, poolTable])
-
+    // const loopedCarouselImgs = [...carouselImgs, ...carouselImgs]
     const [scrollStateH, setScrollStateH] = useState(false)
 
     const [swiper, setSwiper] = useState(null)  // Fix to autoplay issue
@@ -55,7 +48,14 @@ export default function Main() {
         // Initallized
         if (swiper) {
             // Manual start
-            swiper.autoplay.start()
+            const timeoutId = setTimeout(() => {
+                swiper.update()
+
+
+                swiper.autoplay.start()
+            }, 100)
+
+            return () => clearTimeout(timeoutId)
         }
     }, [swiper]) 
 
@@ -161,6 +161,7 @@ export default function Main() {
                             disableOnInteraction: false,
                             pauseOnMouseEnter: false
                         }}
+                        onM
                         // noSwiping={true}
                         // parallax={true}
                         // oneWayMovement={true}
