@@ -35,7 +35,7 @@ export default function Main() {
 
     ])
     // const [carouselImgs, setCarouselImgs] = useState([stage, frankMugshot, flowers, performers, tennis, hendrixMugshot, poolTable])
-    // const loopedCarouselImgs = [...carouselImgs, ...carouselImgs]
+    const loopedCarouselImgs = [...carouselImgs, ...carouselImgs]
     const [scrollStateH, setScrollStateH] = useState(false)
 
     const [swiper, setSwiper] = useState(null)  // Fix to autoplay issue
@@ -53,7 +53,7 @@ export default function Main() {
 
 
                 swiper.autoplay.start()
-            }, 1000)
+            }, 500)
 
             return () => clearTimeout(timeoutId)
         }
@@ -91,7 +91,7 @@ export default function Main() {
             // window.addEventListener('resize',setStaticVH)
     }, [])
 
-    const carouselItems = carouselImgs.map((imgObj, idx) => (
+    const carouselItems = loopedCarouselImgs.map((imgObj, idx) => (
         <SwiperSlide key={idx} className='carousel-item'>
             <div className='overlay'></div>
             <img
