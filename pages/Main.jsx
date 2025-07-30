@@ -161,7 +161,7 @@ export default function Main() {
                             disableOnInteraction: false,
                             pauseOnMouseEnter: false
                         }}
-                        onM
+                    
                         // noSwiping={true}
                         // parallax={true}
                         // oneWayMovement={true}
