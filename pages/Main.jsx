@@ -45,7 +45,7 @@ export default function Main() {
 
 
     useEffect(() => {
-        Initallized
+        
         if (swiper) {
             // Manual start
             const timeoutId = setTimeout(() => {
