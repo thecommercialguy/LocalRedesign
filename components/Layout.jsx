@@ -1,10 +1,11 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import { useEffect, useState, useContext, createContext } from "react";
-import { Outlet, useLocation, useResolvedPath } from "react-router-dom";
+import { useEffect, useState, useContext, createContext, useLayoutEffect } from "react";
+import { Outlet, ScrollRestoration, useLocation, useResolvedPath } from "react-router-dom";
 import HeaderHome from "./HeaderHome";
 import { ClickContext } from '../src/contexts/ClickContext.js'
 import { ScreenWidthContext } from '../src/contexts/ScreenWidthContext.js'
+import { AnimatePresence } from "framer-motion";
 
 
 // const ClickContext1 = createContext()
@@ -22,6 +23,7 @@ export default function Layout() {
     // clickCo
 
     // console.log(window.scrollY)
+    const location = useLocation()
     const pathname = useLocation("/").pathname
     // console.log(pathname)
     // useEffect(()=>{
@@ -66,9 +68,14 @@ export default function Layout() {
                     {pathname === '/' ? <HeaderHome scrolled={scrollState}/> : <Header />}
                     {/* {pathname === '/' ? <HeaderHome notDesktop={windowWidth} scrolled={scrollState}/> : <Header notDesktop={windowWidth}  />} */}
                 </ClickContext.Provider>
-                <Outlet/>
+                <AnimatePresence mode="wait">
+                        <Outlet key={location.pathname} />
+                    </AnimatePresence>
+                {/* <Outlet/> */}
                 <Footer/>
             </ScreenWidthContext.Provider>
+
+            <ScrollRestoration />
         </>
     )
 }
