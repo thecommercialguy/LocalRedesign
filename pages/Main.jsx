@@ -143,7 +143,7 @@ export default function Main() {
                         // }}
                         autoplay={{
                             delay: 0,
-                            disableOnInteraction: true,
+                            disableOnInteraction: false,
                             pauseOnMouseEnter: false
                         }}
                         // noSwiping={true}
